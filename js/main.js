@@ -166,12 +166,12 @@ animateAboutElement
 
 new ScrollMagic.Scene({
     triggerElement: '#about',
-    triggerHook: .75,
+    triggerHook: .85,
     duration: window.innerHeight
   })
   .setTween(animateAboutElement)
-  .addTo(controller);
-// .addIndicators();
+  .addTo(controller)
+  .addIndicators();
 
 let animateAboutParagraph = new TimelineMax();
 
