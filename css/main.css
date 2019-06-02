@@ -172,6 +172,10 @@ h1 {
     /* transform: rotate(-90deg) */
 }
 
+header h1 {
+    font-size: 5em;
+}
+
 .h1-medium {
     font-weight: 300;
 }
@@ -201,6 +205,7 @@ h3 {
 }
 
 h5 {
+    /* font-size: 1.2em; */
     font-weight: 400;
 }
 

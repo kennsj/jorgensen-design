@@ -2,7 +2,7 @@ let rellax = new Rellax('.project-info')
 let controller = new ScrollMagic.Controller();
 
 var scroll = new SmoothScroll('a[href*="#"]', {
-	speed: 300,
+	speed: 260,
 	// speedAsDuration: true
 });
 
@@ -183,14 +183,14 @@ animateAboutParagraph
     opacity: 1,
     yPercent: 0
   })
-  .fromTo('.second-paragraph', 0.5, {
+  .fromTo('.second-paragraph', 0.3, {
     opacity: 0,
     yPercent: '20px'
   }, {
     opacity: 1,
     yPercent: 0
   })
-  .fromTo('.about-me a', 0.5, {
+  .fromTo('.about-me a', 0.3, {
     opacity: 0
   }, {
     opacity: 1
@@ -198,6 +198,7 @@ animateAboutParagraph
 
 new ScrollMagic.Scene({
     triggerElement: ".about-me",
+    offset: -window.innerHeight / 12
     // troggerHook: 0.5,
     // duration: window.innerHeight
   })
