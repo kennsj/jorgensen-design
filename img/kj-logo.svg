@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="59px" height="66px" viewBox="0 0 59 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Sketch-05" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-01-Copy" transform="translate(-267.000000, -125.000000)">
+            <g id="Group-4" transform="translate(267.000000, 125.000000)">
+                <text id="Jørgensen" font-family="Inter-Regular, Inter" font-size="12" font-weight="normal" fill="#252525">
+                    <tspan x="0" y="63">Jørgensen</tspan>
+                </text>
+                <g id="Group-2" fill="#303030">
+                    <polygon id="Rectangle" transform="translate(14.609340, 26.399223) rotate(-45.000000) translate(-14.609340, -26.399223) " points="8.8315108 12.229581 20.6925661 12.1023322 20.3871691 40.568865 8.52611377 40.6961138"></polygon>
+                    <path d="M41.5720185,27.2529412 L43.086655,28.8205882 L43.0964864,28.8129566 C43.5006812,29.2627497 44.0774943,29.5441176 44.7178022,29.5441176 C45.9403947,29.5441176 46.9315018,28.518323 46.9315018,27.2529412 L46.9315018,-2.00728323e-13 L58,-1.98017323e-13 L58,27.4941176 L57.9979978,27.494074 C57.8736762,34.9751227 51.9755397,41 44.7178022,41 C39.9661968,41 35.7973515,38.4175828 33.449979,34.5348148 L38.8270652,27.2529412 L41.5720185,27.2529412 Z" id="Combined-Shape"></path>
+                    <polygon id="Rectangle" transform="translate(14.609340, 14.410919) rotate(-135.000000) translate(-14.609340, -14.410919) " points="8.52611377 0.114028125 20.3871691 0.241276889 20.6925661 28.7078097 8.8315108 28.5805609"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
