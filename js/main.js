@@ -170,8 +170,8 @@ new ScrollMagic.Scene({
     duration: window.innerHeight
   })
   .setTween(animateAboutElement)
-  .addTo(controller)
-  .addIndicators();
+  .addTo(controller);
+  // .addIndicators();
 
 let animateAboutParagraph = new TimelineMax();
 
