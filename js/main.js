@@ -1,18 +1,26 @@
 let rellax = new Rellax('.project-info')
 let controller = new ScrollMagic.Controller();
 
+/////////////////////////////////////
+////* Add fixed position to h1  *////
+/////////////////////////////////////
+
 function stickyHeader() {
 
-  let about = document.getElementById('about-intro')
-  let aboutTop = about.offsetTop
-  let fixedH1 = document.querySelector('.fixed-h1')
+  let fixedH1 = document.querySelector('.fixed-h1');
+  let about = document.getElementById('about-intro');
+  let aboutTop = about.offsetTop;
 
   if (window.scrollY >= aboutTop) {
-    fixedH1.classList.add('sticky-h1')
+    fixedH1.classList.add('sticky-h1');
   } else {
-    fixedH1.classList.remove('sticky-h1')
+    fixedH1.classList.remove('sticky-h1');
   }
 }
+
+document.addEventListener('scroll', function() {
+  stickyHeader();
+})
 
 ////////////////////////////////////
 ////* Animate project previews *////
@@ -24,10 +32,10 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
 
   let overlay = el.querySelectorAll('.overlay');
   let projectInfo = el.querySelectorAll('.project-info');
-  var projectH6 = el.querySelectorAll('.project-info h6')
-  var projectParagraph = el.querySelectorAll('.project-info p')
-  var projectH4 = el.querySelectorAll('.project-info h4')
-  var projectLink = el.querySelectorAll('.project-info a')
+  var projectH6 = el.querySelectorAll('.project-info h6');
+  var projectParagraph = el.querySelectorAll('.project-info p');
+  var projectH4 = el.querySelectorAll('.project-info h4');
+  var projectLink = el.querySelectorAll('.project-info a');
 
 
   let animatePreview = new TimelineMax();
@@ -55,14 +63,14 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
     })
     .from(projectLink, .3, {
       opacity: 0
-    }, '-=.2')
+    }, '-=.2');
 
 
   let animateProjects = new ScrollMagic.Scene({
       triggerElement: el,
       offset: -window.innerHeight / 4
     })
-    .setTween(animatePreview).addTo(controller)
+    .setTween(animatePreview).addTo(controller);
   // .addIndicators()
 
 });
@@ -88,7 +96,7 @@ Array.prototype.forEach.call(quoteHeaders, function showHeaders(el) {
       opacity: 1,
       left: '-100vw',
       // ease: Power4.easeInOut
-    })
+    });
 
   let scrollAnimateHeaders = new ScrollMagic.Scene({
       triggerElement: el,
@@ -98,7 +106,7 @@ Array.prototype.forEach.call(quoteHeaders, function showHeaders(el) {
     })
     .setTween(animateHeaders)
     .addTo(controller);
-    // .addIndicators();
+  // .addIndicators();
 
 });
 
@@ -116,8 +124,8 @@ new ScrollMagic.Scene({
     duration: window.innerHeight / 2
   })
   .setTween(aboutIntroBackground)
-  .addTo(controller)
-  // .addIndicators();
+  .addTo(controller);
+// .addIndicators();
 
 let aboutBackground = new TweenMax.to('#about', 1.5, {
   backgroundColor: '#FBF4EC'
@@ -132,30 +140,62 @@ new ScrollMagic.Scene({
   })
   .setTween(aboutBackground)
   .addTo(controller);
-  // .addIndicators();
+// .addIndicators();
 
 ////////////////////////////////////
 ////* Animate about me section *////
 ////////////////////////////////////
 
-let aboutMeElement = document.querySelector('.about-me')
+let aboutMeElement = document.querySelector('.about-me');
 console.log(aboutMeElement.offset);
 
 
-let showAboutElement = new TimelineMax();
+let animateAboutElement = new TimelineMax();
 
-showAboutElement.fromTo('.about-me', 0.8, {
-    opacity: 0,
+animateAboutElement
+  .fromTo('.about-me', 0.8, {
+    opacity: 0
   }, {
     opacity: 1
-  }
-);
+  });
 
 new ScrollMagic.Scene({
     triggerElement: '#about',
     triggerHook: .75,
     duration: window.innerHeight
   })
-  .setTween(showAboutElement)
-  .addTo(controller)
+  .setTween(animateAboutElement)
+  .addTo(controller);
+// .addIndicators();
+
+let animateAboutParagraph = new TimelineMax();
+
+animateAboutParagraph
+  .fromTo('.first-paragraph', 0.5, {
+    opacity: 0,
+    yPercent: '20px'
+  }, {
+    opacity: 1,
+    yPercent: 0
+  })
+  .fromTo('.second-paragraph', 0.5, {
+    opacity: 0,
+    yPercent: '20px'
+  }, {
+    opacity: 1,
+    yPercent: 0
+  })
+  .fromTo('.about-me a', 0.5, {
+    opacity: 0
+  }, {
+    opacity: 1
+  });
+
+new ScrollMagic.Scene({
+    triggerElement: ".about-me",
+    // troggerHook: 0.5,
+    // duration: window.innerHeight
+  })
+  .setTween(animateAboutParagraph)
+  .addTo(controller);
   // .addIndicators();
