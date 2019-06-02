@@ -1,6 +1,11 @@
 let rellax = new Rellax('.project-info')
 let controller = new ScrollMagic.Controller();
 
+var scroll = new SmoothScroll('a[href*="#"]', {
+	speed: 300,
+	// speedAsDuration: true
+});
+
 /////////////////////////////////////
 ////* Add fixed position to h1  *////
 /////////////////////////////////////
