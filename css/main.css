@@ -312,12 +312,13 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    width: 140%;
+    width: 150%;
     height: 100%;
-    margin-left: -150px;
+    margin-left: -200px;
+    /* margin-top: -60px; */
     background: #FAF0DF;
     overflow: hidden;
-    transform: skewX(-20px);
+    transform: skewX(-50px);
     z-index: 1;
 }
 

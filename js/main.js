@@ -59,7 +59,7 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
   animatePreview
     .fromTo(overlay, 1  , {
       scale: 1.3,
-      skewX: '-10px',
+      skewX: '-35px',
       // opacity: 1,
       // xPercent: -20,
     }, {
