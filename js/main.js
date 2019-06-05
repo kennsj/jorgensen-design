@@ -56,9 +56,9 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
   let animatePreview = new TimelineMax();
 
   animatePreview
-    .fromTo(overlay, 2.8  , {
+    .fromTo(overlay, 1  , {
       scale: 1.3,
-      skewX: '-20px',
+      skewX: '-10px',
       // opacity: 1,
       // xPercent: -20,
     }, {
@@ -89,7 +89,7 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
   let animateProjects = new ScrollMagic.Scene({
       triggerElement: el,
       offset: -window.innerHeight / 4,
-      duration: window.innerHeight / 1.5
+      // duration: window.innerHeight / 1
     })
     .setTween(animatePreview).addTo(controller)
     // .addIndicators()
@@ -149,7 +149,7 @@ new ScrollMagic.Scene({
 // .addIndicators();
 
 let aboutBackground = new TweenMax.to('#about', 1.5, {
-  backgroundColor: '#FBF4EC'
+  backgroundColor: '#FAF0DF'
 });
 
 // create a scene
