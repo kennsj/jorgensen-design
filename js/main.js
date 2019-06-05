@@ -1,9 +1,9 @@
-let rellax = new Rellax('.project-info')
+let rellax = new Rellax('.project-info');
 let controller = new ScrollMagic.Controller();
 
 var scroll = new SmoothScroll('a[href*="#"]', {
-	speed: 260,
-	// speedAsDuration: true
+  speed: 160,
+  // speedAsDuration: true
 });
 
 /////////////////////////////////////
@@ -23,7 +23,7 @@ function stickyHeader() {
   }
 }
 
-document.addEventListener('scroll', function() {
+document.addEventListener('scroll', function () {
   stickyHeader();
 })
 
@@ -42,41 +42,57 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
   var projectH4 = el.querySelectorAll('.project-info h4');
   var projectLink = el.querySelectorAll('.project-info a');
 
+  for (let i = 0; i > projects.length; i++) {
+    // console.log('hi');
+
+    projectLink.addEventListener('mouseover', function () {
+
+      console.log('hi');
+
+    })
+
+  }
 
   let animatePreview = new TimelineMax();
 
   animatePreview
-    .fromTo(overlay, .8, {
-      scale: 1
+    .fromTo(overlay, 2.8  , {
+      scale: 1.3,
+      skewX: '-20px',
+      // opacity: 1,
+      // xPercent: -20,
     }, {
-      xPercent: 100,
-      transformOrigin: '0% 100%',
-      ease: Power4.easeInOut
-    }, '-=2')
+      xPercent: -100,
+      skewX: 0,
+      // opacity: 0,
+      // transformOrigin: '0% 100%',
+      ease: Power4.easeInOut,
+    })
     .from(projectInfo, .3, {
       // scaleY: 0,
       opacity: 0,
       // transformOrigin: 'left'
-    }, '-=1.4')
-    .from(projectH6, .2, {
+    })
+    .from(projectH6, .3, {
       opacity: 0,
       yPercent: '+=20px'
-    }, '+=0')
-    .from(projectParagraph, .3, {
-      opacity: 0,
-      yPercent: '+=10px'
     })
-    .from(projectLink, .3, {
+    .from(projectParagraph, .4, {
+      opacity: 0,
+      yPercent: '+=20px'
+    })
+    .from(projectLink, .4, {
       opacity: 0
-    }, '-=.2');
+    });
 
 
   let animateProjects = new ScrollMagic.Scene({
       triggerElement: el,
-      offset: -window.innerHeight / 4
+      offset: -window.innerHeight / 4,
+      duration: window.innerHeight / 1.5
     })
-    .setTween(animatePreview).addTo(controller);
-  // .addIndicators()
+    .setTween(animatePreview).addTo(controller)
+    // .addIndicators()
 
 });
 
@@ -151,10 +167,7 @@ new ScrollMagic.Scene({
 ////* Animate about me section *////
 ////////////////////////////////////
 
-let aboutMeElement = document.querySelector('.about-me');
-console.log(aboutMeElement.offset);
-
-
+// let aboutMeElement = document.querySelector('.about-me');
 let animateAboutElement = new TimelineMax();
 
 animateAboutElement
@@ -171,7 +184,7 @@ new ScrollMagic.Scene({
   })
   .setTween(animateAboutElement)
   .addTo(controller);
-  // .addIndicators();
+// .addIndicators();
 
 let animateAboutParagraph = new TimelineMax();
 
@@ -196,6 +209,27 @@ animateAboutParagraph
     opacity: 1
   });
 
+// Hide H1-about
+
+let hideH1About = new TimelineMax();
+
+hideH1About
+  .fromTo('.fixed-h1', 0.8, {
+    opacity: 1
+  }, {
+    opacity: 0
+  });
+
+new ScrollMagic.Scene({
+    triggerElement: '.about-me',
+    triggerHook: 0,
+    offset: -window.innerHeight / 1.5,
+    duration: window.innerHeight / 2
+  })
+  .setTween(hideH1About)
+  .addTo(controller)
+  // .addIndicators();
+
 new ScrollMagic.Scene({
     triggerElement: ".about-me",
     offset: -window.innerHeight / 12
@@ -204,4 +238,18 @@ new ScrollMagic.Scene({
   })
   .setTween(animateAboutParagraph)
   .addTo(controller);
-  // .addIndicators();
+// .addIndicators();
+
+// Animate out video overlay
+
+window.onload = function () {
+
+  let animateVideOverlay = new TweenMax.to('.video-overlay', .9, {
+      bottom: '-100vw',
+      // opacity: 0,
+      ease: Power4.easeIn,
+      duration: 0
+    })
+    .delay(.2)
+
+}
