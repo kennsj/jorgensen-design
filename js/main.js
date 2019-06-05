@@ -3,6 +3,7 @@ let controller = new ScrollMagic.Controller();
 
 var scroll = new SmoothScroll('a[href*="#"]', {
   speed: 160,
+  offset: 200
   // speedAsDuration: true
 });
 
