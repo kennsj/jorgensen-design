@@ -417,7 +417,7 @@ section {
 
 #quotes {
     position: absolute;
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     background: #252525;
 }
@@ -438,7 +438,7 @@ section {
 }
 
 #about {
-    height: 200vh;
+    /* height: 200vh; */
     width: 100%;
     background-color: #252525;
 }
