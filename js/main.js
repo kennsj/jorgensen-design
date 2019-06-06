@@ -61,7 +61,7 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
       skewX: '-35px',
       // xPercent: -20,
     }, {
-      xPercent: -100,
+      xPercent: -100, 
       skewX: 0,
       ease: Sine.easeInOut,
     })
