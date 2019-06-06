@@ -115,15 +115,15 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
 window.onload = function () {
 
   let animateVideOverlay = new TweenMax.fromTo('.video-overlay', .9, {
-      scale: 1.3,
+      scale: 1.7,
       xPercent: '10%',
-      skewX: '35px',
+      skewX: '-35px',
       // opacity: 0,
-      ease: Power4.easeIn,
+      ease: Sine.easeIn,
       duration: 0
     }, {
       skewX: '0',
-      xPercent: '125%',
+      xPercent: '-125%',
     })
     .delay(.3)
 

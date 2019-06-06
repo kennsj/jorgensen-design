@@ -88,8 +88,8 @@ header video {
 
 .video-overlay {
     position: absolute;
-    margin: 0 -10vw;
-    width: 90vw;
+    margin: 0 -25vw;
+    width: 110vw;
     height: 100%;
     background: #FAF0DF;
     z-index: 100;
@@ -135,7 +135,9 @@ h1 {
 }
 
 header h1 {
+    position: relative;
     font-size: 5em;
+    z-index: 200;
 }
 
 .h1-medium {
