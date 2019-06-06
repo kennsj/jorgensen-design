@@ -92,7 +92,7 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
       // duration: window.innerHeight / 1.3
     })
     .setTween(animatePreview).addTo(controller)
-  .addIndicators()
+    // .addIndicators()
 
 });
 
