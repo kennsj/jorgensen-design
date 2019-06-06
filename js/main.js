@@ -57,42 +57,42 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
   let animatePreview = new TimelineMax();
 
   animatePreview
-    .fromTo(overlay, 1.5, {
-      skewX: '35px',
-      // opacity: 1,
+    .fromTo(overlay, 1.2, {
+      skewX: '-35px',
       // xPercent: -20,
     }, {
-      xPercent: 100,
+      xPercent: -100,
       skewX: 0,
-      // opacity: 0,
-      // transformOrigin: '0% 100%',
-      ease: Sine.easeOut,
+      ease: Sine.easeInOut,
     })
     .from(projectInfo, .3, {
       // scaleY: 0,
       opacity: 0,
-      // transformOrigin: 'left'
-    }, '-=.8')
+      ease: Sine.easeInOut,
+    }, '-=.15')
     .from(projectH6, .3, {
       opacity: 0,
-      yPercent: '+=20px'
-    }, '-=.6')
+      yPercent: '+=20px',
+      ease: Sine.easeInOut,
+    }, '-=.1')
     .from(projectParagraph, .4, {
       opacity: 0,
-      yPercent: '+=20px'
-    }, '-=.4')
+      yPercent: '+=20px',
+      ease: Sine.easeInOut,
+    }, '-=.1')
     .from(projectLink, .4, {
-      opacity: 0
+      opacity: 0,
+      ease: Sine.easeInOut,
     }, '-=.2');
 
 
   let animateProjects = new ScrollMagic.Scene({
       triggerElement: el,
       offset: -window.innerHeight / 4,
-      duration: window.innerHeight / 1.3
+      // duration: window.innerHeight / 1.3
     })
     .setTween(animatePreview).addTo(controller)
-  // .addIndicators()
+  .addIndicators()
 
 });
 

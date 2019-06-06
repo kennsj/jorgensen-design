@@ -23,7 +23,7 @@
     padding: 0;
     box-sizing: border-box;
     outline: 1px solid rgba(0, 0, 0, .0);
-    /* outline: 1px solid rgba(0, 0, 0, .6) */
+    outline: 1px solid rgba(0, 0, 0, .6)
 }
 
 html {
@@ -70,6 +70,7 @@ nav li ul a {
 .header-preview {
     position: relative;
     margin: 7.5em 0;
+    overflow: hidden;
 }
 
 header img {
@@ -92,6 +93,7 @@ header video {
     width: 90vw;
     height: 100%;
     background: #FAF0DF;
+
 }
 
 /* .video-overlay {
@@ -231,6 +233,10 @@ section {
     box-shadow: 0 5px 10px rgba(73, 74, 78, 0.15), 0 15px 40px rgba(31, 32, 34, 0.62);
 }
 
+.project-image {
+    overflow: hidden;
+}
+
 .project-left .project-image {
     position: relative;
     grid-column: 2 / span 12;
@@ -258,7 +264,7 @@ section {
     left: 0;
     width: 210%;
     height: 140%;
-    margin: -17% 0 0 -50%;
+    margin: -22% 0 0 -50%;
     /* margin-top: -60px; */
     background: #FAF0DF;
     overflow: hidden;
@@ -674,6 +680,20 @@ li {
         z-index: 2;
     }
 
+    .project .project-image .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 210%;
+        height: 160%;
+        margin: -20% 0 0 -80%;
+        /* margin-top: -60px; */
+        background: #FAF0DF;
+        overflow: hidden;
+        /* transform: skewX(-50px); */
+        z-index: 1;
+    }
+
     #about-intro {
         padding: 10vh 10vw;
     }
@@ -796,65 +816,21 @@ li {
 
 @media only screen and (max-width: 700px) {
     footer {
-        background-color: #252525;
-        color: #FAF0DF;
-        margin: 0;
         padding: 20vh 10vw;
     }
 
-    footer h1 {
-        margin-bottom: 0;
-    }
-
-    footer a {
-        position: relative;
-        font-size: 1em;
-        font-weight: 400;
-        color: #FAF0DF;
-    }
-
     .footer-info {
-        display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        margin-top: 2em;
-    }
-
-    .footer-contact {
-        margin-top: 2em;
-    }
-
-    .footer-contact a:first-child {
-        margin-bottom: 1em;
     }
 
     .contact-margin {
-                position: relative;
-                bottom: -35vh;
+        position: relative;
+        bottom: -27.5vh;
         margin-top: 4em;
         text-decoration: none;
     }
 
-    .footer-links {
-        display: flex;
-        flex-direction: row;
-    }
-
-    li {
-        list-style: none;
-    }
-
-    #about {
-        scroll-behavior: smooth;
-    }
-
-    #contact {
-        scroll-behavior: smooth;
-    }
-
     .footer-links li a {
-        position: relative;
-        display: table;
         margin: 2em 20vw 2em 0em;
     }
 }
@@ -862,7 +838,7 @@ li {
 @media only screen and (max-width: 550px) {
 
     header h1 {
-        font-size: 4em;
+        font-size: 3em;
     }
 
     h1 {
@@ -878,18 +854,18 @@ li {
     }
 
     .header-preview-info {
-        width: 50vw;
+        width: 50vw;    
         top: 4em;
-        left: 6em;
+        left: 2.5em;
     }
 
     .header-preview-info h2 {
-        font-size: 1.5em;
+        font-size: 1.2em;
         margin-bottom: .5em;
     }
 
     .header-preview-info a {
-        font-size: .8em;
+        font-size: .6em;
     }
 
     .about-me {
