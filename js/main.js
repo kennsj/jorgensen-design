@@ -69,17 +69,17 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
       // scaleY: 0,
       opacity: 0,
       ease: Sine.easeInOut,
-    }, '-=.15')
+    }, '-=.6')
     .from(projectH6, .3, {
       opacity: 0,
       yPercent: '+=20px',
       ease: Sine.easeInOut,
-    }, '-=.1')
+    }, '-=.5')
     .from(projectParagraph, .4, {
       opacity: 0,
       yPercent: '+=20px',
       ease: Sine.easeInOut,
-    }, '-=.1')
+    }, '-=.3')
     .from(projectLink, .4, {
       opacity: 0,
       ease: Sine.easeInOut,
