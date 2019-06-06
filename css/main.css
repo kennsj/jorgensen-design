@@ -70,7 +70,6 @@ nav li ul a {
 .header-preview {
     position: relative;
     margin: 7.5em 0;
-    overflow: hidden;
 }
 
 header img {
@@ -93,7 +92,7 @@ header video {
     width: 90vw;
     height: 100%;
     background: #FAF0DF;
-
+    z-index: 100;
 }
 
 /* .video-overlay {
@@ -617,6 +616,7 @@ li {
     header video {
         width: 95vw;
         margin: 0 -7.5vw;
+        overflow: hidden;
     }
 
     section {
@@ -815,6 +815,22 @@ li {
 }
 
 @media only screen and (max-width: 700px) {
+
+    .header-preview-info {
+        width: 50vw;
+        top: 7em;
+        left: 2em;
+    }
+
+    .header-preview-info h2 {
+        font-size: 2.2em;
+        margin-bottom: .5em;
+    }
+
+    .header-preview-info a {
+        font-size: .6em;
+    }
+
     footer {
         padding: 20vh 10vw;
     }
@@ -854,7 +870,7 @@ li {
     }
 
     .header-preview-info {
-        width: 50vw;    
+        width: 50vw;
         top: 4em;
         left: 2.5em;
     }
