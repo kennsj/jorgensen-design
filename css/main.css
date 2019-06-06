@@ -27,15 +27,15 @@
 }
 
 html {
-    background: #FBF4ECx;
+    background: #FBF4EC;
     background: #FAF0DF;
     color: #252525;
     /* font-family: 'Inter', sans-serif; */
     /* font-family: 'Poppins', sans-serif; */
     /* font-family: 'Work Sans', sans-serif; */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Graphik, sans-serif;
-    font-size: calc(12px + .35vw);
-    /* font-weight: 300; */
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, Graphik, sans-serif; */
+    font-family: Graphik, sans-serif;
+    font-size: calc(14px + .35vw);
     font-weight: 400;
     line-height: 1.4;
     overflow-x: hidden;
@@ -52,6 +52,7 @@ nav {
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 50px;
     margin-bottom: 15vh;
 }
@@ -139,7 +140,7 @@ header h1 {
 }
 
 .h1-medium {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 h2 {
@@ -154,12 +155,9 @@ h2 {
 }
 
 h3 {
-    position: fixed;
-    display: table;
     /* width: 100%; */
-    top: 0;
-    font-size: 30em;
-    color: #FAF0DF;
+    font-size: 2em;
+    color: #252525;
     font-weight: 700;
     text-align: center;
     /* line-height: 5em; */
@@ -263,7 +261,7 @@ section {
     left: 0;
     width: 210%;
     height: 180%;
-    margin: -30% 0 0 -70%;
+    margin: -30% 0 0 -80%;
     /* margin-top: -60px; */
     background: #FAF0DF;
     overflow: hidden;
@@ -365,23 +363,6 @@ section {
     z-index: 1001;
 }
 
-#quotes {
-    position: absolute;
-    /* height: 100vh; */
-    width: 100%;
-    background: #252525;
-}
-
-#quotes h3 {
-    position: relative;
-    font-size: 5em;
-    text-align: left;
-    line-height: 5em;
-    /* top: calc(50vh - 1.2em); */
-    color: #FAF0DF;
-    z-index: 500;
-}
-
 .highlighted-text {
     font-weight: 700;
     color: #2FEAB2;
@@ -396,7 +377,7 @@ section {
 .about-me {
     width: 55vw;
     margin: 0 auto 20vh auto;
-    padding: 7.5em 11em;
+    padding: 7.5em 7em;
     background: #FAF0DF;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
@@ -405,22 +386,45 @@ section {
     font-size: 1.6em;
     font-weight: 400;
     letter-spacing: -0.5px;
-    margin-bottom: 2em;
+    margin: 1em 0 3em 0;
 }
 
 .about-me a {
     color: #252525;
 }
 
-.work-experience {
-    height: 150vh;
+#experience {
+    /* height: 100vh; */
     width: 70vw;
     margin: 20vh auto;
 }
 
-.hello {
-    /* height: 100vh; */
-    width: 100%;
+.experience-lists {
+    /* display: flex; */
+    margin: 30vh 0;
+}
+
+.tool-list,
+.exploring-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* width: 40vw; */
+    margin: 10vh auto;
+    padding: 0 15vw;
+}
+
+.tool-list h3,
+.exploring-list h3 {
+    font-size: 1.5em;
+}
+
+.tool-list ul li,
+.exploring-list ul li {
+    /* display: table-row; */
+    flex-direction: column;
+    width: 15vw;
+    margin: 0 10vw 1em 0;
 }
 
 /* Footer styling */
@@ -495,9 +499,6 @@ li {
 @media only screen and (max-width: 1624px) {
 
     .project-left .project-image {
-        position: relative;
-        grid-column: 2 / span 12;
-        grid-row: 1 / span 3;
         width: 100%;
         right: -10vw;
     }
@@ -812,6 +813,35 @@ li {
         font-size: 1.4em;
     }
 
+    .experience-lists {
+        display: flex;
+        flex-direction: row;
+        margin: 10vh 0;
+    }
+
+    .tool-list,
+    .exploring-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        /* width: 40vw; */
+        margin: 10vh auto;
+        padding: 0 5vw;
+    }
+
+    .tool-list h3,
+    .exploring-list h3 {
+        font-size: 1.5em;
+        text-align: left;
+        margin-bottom: 1.6em;
+    }
+
+    .tool-list ul li,
+    .exploring-list ul li {
+        margin: 2em 10vw 1em 0;
+        padding-left: 1.5em;
+    }
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -841,7 +871,7 @@ li {
 
     .contact-margin {
         position: relative;
-        bottom: -27.5vh;
+        bottom: -35.5vh;
         margin-top: 4em;
         text-decoration: none;
     }

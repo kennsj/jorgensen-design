@@ -57,31 +57,29 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
   let animatePreview = new TimelineMax();
 
   animatePreview
-    .fromTo(overlay, 1.2, {
-      skewX: '-35px',
-      // xPercent: -20,
+    .fromTo(overlay, 1.5, {
+      skewX: '-40px',
     }, {
       xPercent: -100, 
       skewX: 0,
       ease: Sine.easeInOut,
     })
     .from(projectInfo, .3, {
-      // scaleY: 0,
-      opacity: 0,
+      autoAlpha: 0,
       ease: Sine.easeInOut,
     }, '-=.6')
     .from(projectH6, .3, {
-      opacity: 0,
+      autoAlpha: 0,
       yPercent: '+=20px',
       ease: Sine.easeInOut,
     }, '-=.5')
     .from(projectParagraph, .4, {
-      opacity: 0,
+      autoAlpha: 0,
       yPercent: '+=20px',
       ease: Sine.easeInOut,
     }, '-=.3')
     .from(projectLink, .4, {
-      opacity: 0,
+      autoAlpha: 0,
       ease: Sine.easeInOut,
     }, '-=.2');
 
@@ -118,7 +116,7 @@ window.onload = function () {
       scale: 1.7,
       xPercent: '10%',
       skewX: '-35px',
-      // opacity: 0,
+      autoAlpha: 1,
       ease: Sine.easeIn,
       duration: 0
     }, {
@@ -127,42 +125,46 @@ window.onload = function () {
     })
     .delay(.3)
 
+    let hideVideoOverlay = new TweenMax.to('.video-overlay', 1, {autoAlpha: 0}).delay(1)
+
 }
 
 ///////////////////////////////
 ////* Animate quote texts *////
 ///////////////////////////////
 
-let quoteHeaders = document.querySelectorAll('h3')
+// let quoteHeaders = document.querySelectorAll('h3')
 
-Array.prototype.forEach.call(quoteHeaders, function showHeaders(el) {
+// Array.prototype.forEach.call(quoteHeaders, function showHeaders(el) {
 
-  let animateHeaders = new TimelineMax();
+//   let animateHeaders = new TimelineMax();
 
-  animateHeaders
-    .fromTo(el, .8, {
-      opacity: 0,
-      right: '-80vw',
-      visibility: 'hidden',
-      // ease: Power4.easeOut
-    }, {
-      visibility: 'visible',
-      opacity: 1,
-      left: '-100vw',
-      // ease: Power4.easeInOut
-    });
+//   animateHeaders
+//     .fromTo(el, .8, {
+//       // opacity: 0,
+//       // autoAlpha: 0,
+//       right: '-80vw',
+//       // visibility: 'hidden',
+//       // ease: Power4.easeOut
+//     }, {
+//       // visibility: 'visible',
+//       // opacity: 1,
+//       // autoAlpha: 0,
+//       left: '-100vw',
+//       // ease: Power4.easeInOut
+//     });
 
-  let scrollAnimateHeaders = new ScrollMagic.Scene({
-      triggerElement: el,
-      offset: 0,
-      triggerHook: .5,
-      duration: window.innerHeight
-    })
-    .setTween(animateHeaders)
-    .addTo(controller);
-  // .addIndicators();
+//   let scrollAnimateHeaders = new ScrollMagic.Scene({
+//       triggerElement: el,
+//       offset: 0,
+//       triggerHook: .5,
+//       duration: window.innerHeight
+//     })
+//     .setTween(animateHeaders)
+//     .addTo(controller);
+//   // .addIndicators();
 
-});
+// });
 
 /////////////////////////////////////
 ////* Animate background colors *////
