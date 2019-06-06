@@ -11,22 +11,22 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 ////* Add fixed position to h1  *////
 /////////////////////////////////////
 
-function stickyHeader() {
+// function stickyHeader() {
 
-  let fixedH1 = document.querySelector('.fixed-h1');
-  let about = document.getElementById('about-intro');
-  let aboutTop = about.offsetTop;
+//   let fixedH1 = document.querySelector('.fixed-h1');
+//   let about = document.getElementById('about-intro');
+//   let aboutTop = about.offsetTop;
 
-  if (window.scrollY >= aboutTop) {
-    fixedH1.classList.add('sticky-h1');
-  } else {
-    fixedH1.classList.remove('sticky-h1');
-  }
-}
-
-document.addEventListener('scroll', function () {
-  stickyHeader();
-})
+//   if (window.scrollY >= aboutTop) {
+//     fixedH1.classList.add('sticky-h1');
+//   } else {
+//     fixedH1.classList.remove('sticky-h1');
+//   }
+// }
+// 
+// document.addEventListener('scroll', function () {
+//   stickyHeader();
+// })
 
 ////////////////////////////////////
 ////* Animate project previews *////
@@ -57,8 +57,8 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
   let animatePreview = new TimelineMax();
 
   animatePreview
-    .fromTo(overlay, 1  , {
-      scale: 1.3,
+    .fromTo(overlay, 1.5 , {
+      scale: 1,
       skewX: '-35px',
       // opacity: 1,
       // xPercent: -20,
@@ -67,30 +67,30 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
       skewX: 0,
       // opacity: 0,
       // transformOrigin: '0% 100%',
-      ease: Power4.easeInOut,
+      ease: Sine.easeOut,
     })
     .from(projectInfo, .3, {
       // scaleY: 0,
       opacity: 0,
       // transformOrigin: 'left'
-    })
+    }, '-=.8')
     .from(projectH6, .3, {
       opacity: 0,
       yPercent: '+=20px'
-    })
+    }, '-=.6')
     .from(projectParagraph, .4, {
       opacity: 0,
       yPercent: '+=20px'
-    })
+    }, '-=.4')
     .from(projectLink, .4, {
       opacity: 0
-    });
+    }, '-=.2');
 
 
   let animateProjects = new ScrollMagic.Scene({
       triggerElement: el,
       offset: -window.innerHeight / 4,
-      // duration: window.innerHeight / 1
+      duration: window.innerHeight / 1.3
     })
     .setTween(animatePreview).addTo(controller)
     // .addIndicators()
@@ -243,14 +243,40 @@ new ScrollMagic.Scene({
 
 // Animate out video overlay
 
+// window.onload = function () {
+
+//   let animateVideOverlay = new TweenMax.to('.video-overlay', .9, {
+//       bottom: '-100vw',
+//       // opacity: 0,
+//       ease: Power4.easeIn,
+//       duration: 0
+//     })
+//     .delay(.2)
+
+// }
+
 window.onload = function () {
 
-  let animateVideOverlay = new TweenMax.to('.video-overlay', .9, {
-      bottom: '-100vw',
+  let animateVideOverlay = new TweenMax.fromTo('.video-overlay', .9, {
+      scale: 1.3,
+      xPercent: '-10%',
+      skewX: '-35px',
       // opacity: 0,
       ease: Power4.easeIn,
       duration: 0
+    }, {
+      skewX: '0',
+      xPercent: '-110%',
+
     })
     .delay(.2)
 
+}
+
+//
+
+if (window.innerWidth <= 800) {
+  
+  // var projectRellax = document.querySelector('.project-info-js').setAttribute('data-rellax-percentage="1.2"')
+  
 }

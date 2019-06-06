@@ -33,7 +33,7 @@ html {
     /* font-family: 'Inter', sans-serif; */
     /* font-family: 'Poppins', sans-serif; */
     /* font-family: 'Work Sans', sans-serif; */
-    font-family: Graphik, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Graphik, sans-serif;
     font-size: calc(12px + .35vw);
     /* font-weight: 300; */
     font-weight: 400;
@@ -65,64 +65,6 @@ nav li ul a {
     margin-left: 1.5em;
     font-size: .8em;
     font-weight: 400;
-}
-
-.hamburger-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background: none;
-    border: none;
-}
-
-.hamburger-wrapper:hover>.hamburger-icon:before {
-    transform: translate(-7px, 0);
-    transition: .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-}
-
-.hamburger-wrapper:hover>.hamburger-icon:after {
-    transform: translate(-7px, 0);
-    transition: .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-}
-
-.hamburger-wrapper:focus>.hamburger-icon:before {
-    transform: translate(-7px, 0);
-    transition: .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-}
-
-.hamburger-wrapper:focus>.hamburger-icon:after {
-    transform: translate(-7px, 0);
-    transition: .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-}
-
-.hamburger-icon {
-    position: absolute;
-    width: 15px;
-    height: 2px;
-    background: #252525;
-    transition: .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-}
-
-.hamburger-icon:after {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 2px;
-    background: #252525;
-    transform: translate(-7px, 6px);
-    transition: .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-}
-
-.hamburger-icon:before {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 2px;
-    background: #252525;
-    transform: translate(-7px, -6px);
-    transition: .3s cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
 .header-preview {
@@ -285,14 +227,15 @@ section {
 .project-info {
     background: #252525;
     padding: 100px 90px 100px 90px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 20px rgba(0, 0, 0, 0.22);
+    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 20px rgba(0, 0, 0, 0.22); */
+    box-shadow: 0 5px 10px rgba(73, 74, 78, 0.15), 0 15px 40px rgba(31, 32, 34, 0.62);
 }
 
 .project-left .project-image {
     position: relative;
     grid-column: 2 / span 12;
     grid-row: 1 / span 3;
-    width: 100%;
+    width: 120%;
     right: -5vw;
 }
 
@@ -301,24 +244,25 @@ section {
     grid-column: 1 / span 12;
     grid-row: 1 / span 3;
     width: 100%;
-    left: -5vw;
+    left: -15vw;
 }
 
 .project .project-image img {
     width: 100%;
+    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.12); */
 }
 
 .project .project-image .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    width: 150%;
-    height: 100%;
-    margin-left: -200px;
+    width: 200%;
+    height: 150%;
+    margin: -150px 0 0 -650px;
     /* margin-top: -60px; */
     background: #FAF0DF;
     overflow: hidden;
-    transform: skewX(-50px);
+    /* transform: skewX(-50px); */
     z-index: 1;
 }
 
@@ -394,7 +338,7 @@ section {
 .about-info h2 {
     position: absolute;
     left: 0;
-    bottom: 50vh;
+    bottom: 80vh;
     width: 100%;
     text-align: center;
     mix-blend-mode: difference;
@@ -466,6 +410,11 @@ section {
 .work-experience {
     width: 70vw;
     margin: 20vh auto;
+}
+
+.hello {
+    height: 100vh;
+    width: 100%;
 }
 
 /* Footer styling */
@@ -700,7 +649,7 @@ li {
         grid-column: 1 / span 12;
         grid-row: 1 / span 3;
         width: 130%;
-        left: 0;
+        left: -15vw;
     }
 
     .project-left .project-info {
@@ -729,6 +678,151 @@ li {
 
     .about-me {
         width: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    header {
+        width: 80vw;
+    }
+
+    header video {
+        width: 95vw;
+        margin: 0 -7.5vw;
+    }
+
+    section {
+        width: 80vw;
+    }
+
+    a:after {
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 100%;
+        left: 0;
+        bottom: -3px;
+        background: #2FEAB2;
+        transition: .5s cubic-bezier(0.0, 0.0, 0.2, 1);
+        z-index: -1;
+    }
+
+    a:hover:after,
+    a:focus:after {
+        height: 8px;
+    }
+
+    h1 {
+        font-size: calc(3em - 1vw);
+    }
+
+    h2 {
+        font-size: calc(2.5em - 1vw);
+        line-height: 1.5em
+    }
+
+    section {
+        width: 100vw;
+    }
+
+    #projects h1 {
+        margin-left: 10vw;
+    }
+
+    .header-preview-info {
+        width: 50vw;
+        top: 8em;
+        left: 6em;
+    }
+
+    .header-preview-info h2 {
+        font-size: 3em;
+        margin-bottom: .5em;
+    }
+
+    .grid-12 {
+        margin: 10vh 0;
+        padding: 2.5vh 2.5vw;
+    }
+
+    .project-left .project-image {
+        width: 100%;
+        margin: 0;
+        right: 0;
+    }
+
+    .project-left .project-info {
+        width: 100%;
+        padding: 70px;
+        grid-column: 1 / span 12;
+        grid-row: 4;
+        margin: -70px auto;
+    }
+
+    .project-right .project-image {
+        position: relative;
+        grid-column: 1 / span 12;
+        width: 100%;
+        top: 10vh;
+        left: 0;
+    }
+
+    .project-right .project-info {
+        padding: 70px;
+        grid-column: 1 / span 12;
+        grid-row: 4;
+        margin: -70px auto;
+    }
+
+    #about-intro {
+        padding: 10vh 10vw;
+    }
+
+    .about-me {
+        width: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+
+    header h1 {
+        font-size: 4em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .h1-medium: {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .header-preview-info {
+        width: 50vw;
+        top: 4em;
+        left: 6em;
+    }
+
+    .header-preview-info h2 {
+        font-size: 1.5em;
+        margin-bottom: .5em;
+    }
+
+    .header-preview-info a {
+        font-size: .8em;
+    }
+
+    .about-me {
+        font-weight: 100;
+        width: 90%;
+        padding: 5em 2.5em;
     }
 
 }
