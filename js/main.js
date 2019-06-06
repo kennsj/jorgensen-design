@@ -57,13 +57,12 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
   let animatePreview = new TimelineMax();
 
   animatePreview
-    .fromTo(overlay, 1.5 , {
-      scale: 1,
-      skewX: '-35px',
+    .fromTo(overlay, 1.5, {
+      skewX: '35px',
       // opacity: 1,
       // xPercent: -20,
     }, {
-      xPercent: -100,
+      xPercent: 100,
       skewX: 0,
       // opacity: 0,
       // transformOrigin: '0% 100%',
@@ -93,9 +92,42 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
       duration: window.innerHeight / 1.3
     })
     .setTween(animatePreview).addTo(controller)
-    // .addIndicators()
+  // .addIndicators()
 
 });
+
+/////////////////////////////////
+////* Animate video preview *////
+/////////////////////////////////
+
+// window.onload = function () {
+
+//   let animateVideOverlay = new TweenMax.to('.video-overlay', .9, {
+//       bottom: '-100vw',
+//       // opacity: 0,
+//       ease: Power4.easeIn,
+//       duration: 0
+//     })
+//     .delay(.2)
+
+// }
+
+window.onload = function () {
+
+  let animateVideOverlay = new TweenMax.fromTo('.video-overlay', .9, {
+      scale: 1.3,
+      xPercent: '10%',
+      skewX: '35px',
+      // opacity: 0,
+      ease: Power4.easeIn,
+      duration: 0
+    }, {
+      skewX: '0',
+      xPercent: '125%',
+    })
+    .delay(.3)
+
+}
 
 ///////////////////////////////
 ////* Animate quote texts *////
@@ -229,7 +261,7 @@ new ScrollMagic.Scene({
   })
   .setTween(hideH1About)
   .addTo(controller)
-  // .addIndicators();
+// .addIndicators();
 
 new ScrollMagic.Scene({
     triggerElement: ".about-me",
@@ -241,42 +273,10 @@ new ScrollMagic.Scene({
   .addTo(controller);
 // .addIndicators();
 
-// Animate out video overlay
-
-// window.onload = function () {
-
-//   let animateVideOverlay = new TweenMax.to('.video-overlay', .9, {
-//       bottom: '-100vw',
-//       // opacity: 0,
-//       ease: Power4.easeIn,
-//       duration: 0
-//     })
-//     .delay(.2)
-
-// }
-
-window.onload = function () {
-
-  let animateVideOverlay = new TweenMax.fromTo('.video-overlay', .9, {
-      scale: 1.3,
-      xPercent: '-10%',
-      skewX: '-35px',
-      // opacity: 0,
-      ease: Power4.easeIn,
-      duration: 0
-    }, {
-      skewX: '0',
-      xPercent: '-110%',
-
-    })
-    .delay(.2)
-
-}
-
 //
 
 if (window.innerWidth <= 800) {
-  
+
   // var projectRellax = document.querySelector('.project-info-js').setAttribute('data-rellax-percentage="1.2"')
-  
+
 }
