@@ -41,6 +41,44 @@ html {
     overflow-x: hidden;
 }
 
+/* Preloader styling */
+
+.preloader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    /* background: #252525; */
+    background: #252525;
+    color: #FBF4EC;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.preload-info {
+    position: relative;
+    opacity: 0;
+    z-index: 1001;
+}
+
+.preloader h1 {
+    position: relative;
+    top: 45vh;
+    left: 25vw;
+    font-weight: 400;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    height: 1vh;
+    width: 100vw;
+    background: #2FEAB2;
+    /* background: #252525; */
+}
+
 /* Header styling */
 
 header {
@@ -120,9 +158,9 @@ header nav img {
 }
 
 .header-preview-info {
-    width: 500px;
     position: absolute;
-    top: 12em;
+    width: 60vw;
+    top: 12vw;
     left: 6em;
 }
 
@@ -152,6 +190,7 @@ h2 {
 .header-preview-info h2 {
     font-size: calc(4.5em - 1vw);
     line-height: 1.5em;
+    margin-bottom: 1em;
 }
 
 h3 {
@@ -380,6 +419,11 @@ section {
     padding: 7.5em 7em;
     background: #FAF0DF;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.about-me h2 {
+    color: #252525;
+    margin-bottom: 1em;
 }
 
 .about-me p {
@@ -685,9 +729,9 @@ li {
         position: absolute;
         top: 0;
         left: 0;
-        width: 210%;
-        height: 160%;
-        margin: -20% 0 0 -80%;
+        width: 240%;
+        height: 200%;
+        margin: -35% 0 0 -90%;
         /* margin-top: -60px; */
         background: #FAF0DF;
         overflow: hidden;
@@ -771,10 +815,19 @@ li {
         padding: 2.5vh 2.5vw;
     }
 
+    #projects:last-of-type {
+        margin-top: 30vh;
+        transform: scale(3)
+    }
+
     .project-left .project-image {
         width: 100%;
         margin: 0;
         right: 0;
+    }
+
+    .mobile-margin {
+        margin-bottom: 20vh;
     }
 
     .project-left .project-info {
@@ -846,6 +899,10 @@ li {
 
 @media only screen and (max-width: 700px) {
 
+    header h1 {
+        font-size: 2.4em;
+    }
+
     .header-preview-info {
         width: 50vw;
         top: 7em;
@@ -859,6 +916,44 @@ li {
 
     .header-preview-info a {
         font-size: .6em;
+    }
+
+    #experience {
+        width: 100vw;
+    }
+
+    #experience h1 {
+        margin-left: 10vw;
+    }
+
+    .experience-lists {
+        display: flex;
+        flex-direction: row;
+        margin: 10vh 0;
+    }
+
+    .tool-list,
+    .exploring-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        /* width: 40vw; */
+        margin: 10vh auto;
+        padding: 0 5vw;
+    }
+
+    .tool-list h3,
+    .exploring-list h3 {
+        font-size: 1.5em;
+        text-align: left;
+        margin-bottom: 1.6em;
+    }
+
+    .tool-list ul li,
+    .exploring-list ul li {
+        width: 35vw;
+        margin: 2em 10vw 1em 0;
+        padding-left: 1.5em;
     }
 
     footer {
@@ -884,7 +979,7 @@ li {
 @media only screen and (max-width: 550px) {
 
     header h1 {
-        font-size: 3em;
+        font-size: 2.2em;
     }
 
     h1 {
@@ -918,6 +1013,13 @@ li {
         font-weight: 100;
         width: 90%;
         padding: 5em 2.5em;
+    }
+
+    .tool-list ul li,
+    .exploring-list ul li {
+        width: 35vw;
+        margin: 2em 10vw 1em 0;
+        padding-left: .5em;
     }
 
 }
