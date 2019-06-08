@@ -73,8 +73,8 @@ html {
 
 .progress-bar {
     position: absolute;
-    bottom: 0;
-    left: -100vw;
+    bottom: -1vh;
+    left: 0;
     height: 1vh;
     width: 100vw;
     /* background: #2FEAB2; */
@@ -327,29 +327,16 @@ section {
     z-index: 2;
 }
 
-.project-info p {
-    margin: 2em 0 2em 0;
-    font-size: 1.2em;
-}
-
-.project-info h4 {
-    margin: 2.5em 0;
-    font-size: .8em;
-}
-
 .project-info h6 span {
     font-weight: 700;
 }
 
-.h6-line {
-    display: inline-flex;
-    position: relative;
-    top: -3px;
-    height: 2px;
-    width: 20px;
-    margin: 0 10px 0 0;
-    background: #F2ECE5;
+.project-info p {
+    margin: 2em 0 2em 0;
+    font-size: 1.1em;
+    line-height: 1.4
 }
+
 
 .project-info a {
     font-size: .8em;

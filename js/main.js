@@ -289,10 +289,11 @@ if (window.innerWidth <= 800) {
 window.onload = function () {
 
   let animateProgressBar = new TweenMax.fromTo('.progress-bar', 1.2, {
-    xPercent: '0',
+    xPercent: '-120',
+    bottom: '0',
     ease: Sine.easeInOut
   }, {
-    xPercent: '100',
+    xPercent: '0',
     ease: Sine.easeInOut
   });
 
@@ -318,7 +319,7 @@ window.onload = function () {
       autoAlpha: 0,
       ease: Sine.easeInOut,
     })
-    .delay(2.4)
+    .delay(2.7)
 
   let animatePreloaderH1 = new TweenMax.fromTo('.preloader h1', .5, {
       autoAlpha: 1,
@@ -338,7 +339,7 @@ window.onload = function () {
 // setInterval(() => {
 
 //     if (preloader.style.opacity = '1') {
-      
+
 //       console.log('visible');
 
 //     } else if (preloader.style.opacity = '0') {
@@ -347,4 +348,3 @@ window.onload = function () {
 
 //     }
 // }, 500);
-
