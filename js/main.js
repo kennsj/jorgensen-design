@@ -186,7 +186,7 @@ new ScrollMagic.Scene({
 // .addIndicators();
 
 let aboutBackground = new TweenMax.to('#about', 1.5, {
-  backgroundColor: '#FAF0DF'
+  backgroundColor: '#F2ECE5'
 });
 
 // create a scene
@@ -330,3 +330,9 @@ window.onload = function () {
     .delay(2)
 
 }
+
+// Disable scroll
+
+let preloader = document.querySelector('.preloader')
+
+console.log(preloader);
