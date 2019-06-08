@@ -36,7 +36,7 @@ html {
     /* font-family: 'Work Sans', sans-serif; */
     /* font-family: system-ui, -apple-system, BlinkMacSystemFont, Graphik, sans-serif; */
     font-family: Graphik, sans-serif;
-    font-size: calc(14px + .35vw);
+    font-size: calc(10px + .35vw);
     font-weight: 400;
     line-height: 1.6;
     overflow-x: hidden;
@@ -265,7 +265,8 @@ section {
     background: #252525;
     padding: 100px 90px 100px 90px;
     /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 20px rgba(0, 0, 0, 0.22); */
-    box-shadow: 0 5px 10px rgba(73, 74, 78, 0.15), 0 15px 40px rgba(31, 32, 34, 0.62);
+    /* box-shadow: 0 5px 10px rgba(73, 74, 78, 0.15), 0 15px 40px rgba(31, 32, 34, 0.62); */
+    box-shadow: 0 5px 10px rgba(73, 74, 78, 0.19), 0 15px 40px rgba(31, 32, 34, 0.36);
 }
 
 .project-image {
@@ -404,7 +405,8 @@ section {
     margin: 0 auto 20vh auto;
     padding: 7.5em 7em;
     background: #F2ECE5;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+    box-shadow: 0 5px 10px rgba(73, 74, 78, 0.09), 0 15px 40px rgba(31, 32, 34, 0.06);
 }
 
 .about-me h2 {
@@ -426,7 +428,8 @@ section {
 #experience {
     /* height: 100vh; */
     width: 70vw;
-    margin: 20vh auto;
+    margin: 20vh auto 0 auto;
+    padding-bottom: 5vh;
 }
 
 .experience-lists {
@@ -813,7 +816,7 @@ li {
     }
 
     .mobile-margin {
-        margin-bottom: 20vh;
+        margin-bottom: 35vh;
     }
 
     .project-left .project-info {
