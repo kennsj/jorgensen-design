@@ -289,10 +289,10 @@ if (window.innerWidth <= 800) {
 window.onload = function () {
 
   let animateProgressBar = new TweenMax.fromTo('.progress-bar', 1.2, {
-    xPercent: '-120',
+    xPercent: '0',
     ease: Sine.easeInOut
   }, {
-    xPercent: '0',
+    xPercent: '100',
     ease: Sine.easeInOut
   });
 
