@@ -313,12 +313,12 @@ window.onload = function () {
 
   let animatePreloaderOut = new TweenMax.fromTo('.preloader', .5, {
       autoAlpha: 1,
-      ease: Sine.easeInOut
+      ease: Sine.easeInOut,
     }, {
       autoAlpha: 0,
-      ease: Sine.easeInOut
+      ease: Sine.easeInOut,
     })
-    .delay(2.7)
+    .delay(2.4)
 
   let animatePreloaderH1 = new TweenMax.fromTo('.preloader h1', .5, {
       autoAlpha: 1,
@@ -333,6 +333,18 @@ window.onload = function () {
 
 // Disable scroll
 
-let preloader = document.querySelector('.preloader')
+// let preloader = document.querySelector('.preloader')
 
-console.log(preloader);
+// setInterval(() => {
+
+//     if (preloader.style.opacity = '1') {
+      
+//       console.log('visible');
+
+//     } else if (preloader.style.opacity = '0') {
+
+//       console.log('hidden');
+
+//     }
+// }, 500);
+
