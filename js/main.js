@@ -7,27 +7,6 @@ var scroll = new SmoothScroll('a[href*="#"]', {
   // speedAsDuration: true
 });
 
-/////////////////////////////////////
-////* Add fixed position to h1  *////
-/////////////////////////////////////
-
-// function stickyHeader() {
-
-//   let fixedH1 = document.querySelector('.fixed-h1');
-//   let about = document.getElementById('about-intro');
-//   let aboutTop = about.offsetTop;
-
-//   if (window.scrollY >= aboutTop) {
-//     fixedH1.classList.add('sticky-h1');
-//   } else {
-//     fixedH1.classList.remove('sticky-h1');
-//   }
-// }
-// 
-// document.addEventListener('scroll', function () {
-//   stickyHeader();
-// })
-
 ////////////////////////////////////
 ////* Animate project previews *////
 ////////////////////////////////////
@@ -43,21 +22,10 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
   var projectH4 = el.querySelectorAll('.project-info h4');
   var projectLink = el.querySelectorAll('.project-info a');
 
-  for (let i = 0; i > projects.length; i++) {
-    // console.log('hi');
-
-    projectLink.addEventListener('mouseover', function () {
-
-      console.log('hi');
-
-    })
-
-  }
-
   let animatePreview = new TimelineMax();
 
   animatePreview
-    .fromTo(overlay, 1.5, {
+    .fromTo(overlay, 1.2, {
       skewX: '-40px',
     }, {
       xPercent: -100,
@@ -288,7 +256,11 @@ if (window.innerWidth <= 800) {
 
 window.onload = function () {
 
-  let animateProgressBar = new TweenMax.fromTo('.progress-bar', 1.2, {
+
+  var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+  console.log('Page load time is ' + loadTime / 1000 + ' seconds.');
+
+  let animateProgressBar = new TweenMax.fromTo('.progress-bar', 1.5, {
     xPercent: '-120',
     bottom: '0',
     ease: Sine.easeInOut
@@ -296,6 +268,7 @@ window.onload = function () {
     xPercent: '0',
     ease: Sine.easeInOut
   });
+  // .duration(loadTime);
 
   let animatePreload = new TweenMax.fromTo('.preload-info', .5, {
       autoAlpha: 0,
@@ -332,19 +305,53 @@ window.onload = function () {
 
 }
 
+
+
 // Disable scroll
+
+let preloader = document.querySelector('.preloader')
+
+if (preloader.style.visibility = 'hidden') {
+
+  console.log('hi');
+
+}
 
 // let preloader = document.querySelector('.preloader')
 
-// setInterval(() => {
+setInterval(() => {
 
-//     if (preloader.style.opacity = '1') {
+  // var myStyle = document.getElementById("myDiv").offsetLeft;
 
-//       console.log('visible');
 
-//     } else if (preloader.style.opacity = '0') {
 
-//       console.log('hidden');
+  // } else if (preloader.style.opacity = '0') {
 
-//     }
-// }, 500);
+  //   console.log('hidden');
+
+  // }
+
+}, 1000);
+
+
+// window.onload = function () {
+//   var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+//   console.log('Page load time is ' + loadTime / 1000 + ' seconds.');
+// }
+
+var lazyLoadInstance = new LazyLoad({
+  elements_selector: '.project-image img, video',
+  // elements_selector: 'video'
+});
+
+// Pause/play header video
+
+document.querySelector('video').addEventListener('mousedown', function() {
+  
+    if (this.paused)
+      this.play();
+    else
+      this.pause();
+
+
+})

@@ -36,7 +36,7 @@ html {
     /* font-family: 'Work Sans', sans-serif; */
     /* font-family: system-ui, -apple-system, BlinkMacSystemFont, Graphik, sans-serif; */
     font-family: Graphik, sans-serif;
-    font-size: calc(10px + .35vw);
+    font-size: calc(12px + .35vw);
     font-weight: 400;
     line-height: 1.6;
     overflow-x: hidden;
@@ -54,8 +54,10 @@ html {
     /* background: #252525; */
     background: #252525;
     color: #FBF4EC;
+    opacity: 1;
     overflow: hidden;
     z-index: 1000;
+    display: none;
 }
 
 .preload-info {
@@ -329,7 +331,9 @@ section {
 }
 
 .project-info h6 span {
+    font-size: 1.2em;
     font-weight: 700;
+    color: #2FEAB2;
 }
 
 .project-info p {
@@ -403,7 +407,7 @@ section {
 .about-me {
     width: 55vw;
     margin: 0 auto 20vh auto;
-    padding: 7.5em 7em;
+    padding: 10em 7em;
     background: #F2ECE5;
     /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
     box-shadow: 0 5px 10px rgba(73, 74, 78, 0.09), 0 15px 40px rgba(31, 32, 34, 0.06);
@@ -636,7 +640,7 @@ li {
 
     .about-me {
         width: 70%;
-        padding: 5em 7em;
+        padding: 9em 7em;
     }
 
 }
