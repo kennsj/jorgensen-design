@@ -72,7 +72,9 @@ html {
 .preloader h1 {
     position: relative;
     top: 45vh;
-    left: 25vw;
+    left: 10vw;
+    width: 100%;
+    /* text-align: center; */
     font-weight: 400;
 }
 
