@@ -955,7 +955,7 @@ li {
 
     .experience-lists {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         margin: 10vh 0;
     }
 
@@ -964,8 +964,10 @@ li {
         display: flex;
         flex-direction: column;
         justify-content: start;
-        /* width: 40vw; */
-        margin: 10vh auto;
+        width: 80%;
+        height: 100px;
+        font-size: .8em;
+        margin: 10vh 10vw;
         padding: 0;
     }
 
@@ -976,11 +978,26 @@ li {
         margin-bottom: 1.6em;
     }
 
+    .tool-list ul,
+    .exploring-list ul {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+        -webkit-column-gap: 200px;
+        -moz-column-gap: 200px;
+        column-gap: 30px;
+        padding: 0;
+        margin: 0;
+    }
+
     .tool-list ul li,
     .exploring-list ul li {
         width: 100%;
-        margin: 2em 0 1em 0;
-        padding-left: 1.5em;
+        height: 50px;
+        /* margin: 2em 0 1em 0; */
+        margin: 0;
+        padding: 0;
+        /* padding-left: 1.5em; */
     }
 
     footer {
@@ -1045,7 +1062,7 @@ li {
     .tool-list ul li,
     .exploring-list ul li {
         width: 40vw;
-        margin: 2em 0 1em 0;
+        margin: 0;
         padding-left: .5em;
     }
 
