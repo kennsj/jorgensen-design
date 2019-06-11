@@ -802,14 +802,6 @@ li {
         margin: 15vh 0;
     }
 
-    .project-left .project-info {
-        width: 100%;
-        /* padding: 4em 4em 5.5em 4em; */
-        padding: 0;
-        grid-column: 1 / span 12;
-        grid-row: 4;
-        margin: -70px auto;
-    }
 
     .project-right .project-image {
         position: relative;
@@ -827,7 +819,7 @@ li {
     }
 
     .project-left .project-info {
-        padding: 4em 3em;
+        padding: 7em 5em;
         grid-column: 1 / span 12;
         grid-row: 4;
         margin: -2em auto;
