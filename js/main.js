@@ -5,7 +5,6 @@ let allowScroll;
 var scroll = new SmoothScroll('a[href*="#"]', {
   speed: 160,
   offset: '50vh'
-  // speedAsDuration: true
 });
 
 /////////////////////////////
@@ -16,8 +15,7 @@ window.onload = function () {
 
   allowScroll = false;
 
-  var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-  console.log('Page load time is ' + loadTime / 1000 + ' seconds.');
+  // var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
 
   let animateProgressBar = new TweenMax.fromTo('.progress-bar', 1.5, {
     xPercent: '-120',
@@ -355,24 +353,7 @@ new ScrollMagic.Scene({
   .addTo(controller);
 // .addIndicators();
 
-
-// if (window.innerWidth <= 800) {
-
-  console.log(document.querySelector('.project-info').attributes);
-  
-  var projectRellax = document.querySelector('.project-info').setAttribute('data-rellax-speed', '2');
-  // var projectRellax = document.querySelector('.project-info').setAttribute('rellaxPercentage', '2');
-
-  console.log(document.querySelector('.project-info').attributes);
-
-  // .setAttribute('rellaxPercentage', '2');
-
-  //  var projectRellax = document.querySelector('.project-info').attributes["data-rellax-speed"] = "-1";
-
-
-
-// }
-
+// Lazy load images and video
 
 var lazyLoadInstance = new LazyLoad({
   elements_selector: '.project-image img, video',
@@ -386,6 +367,5 @@ document.querySelector('video').addEventListener('mousedown', function () {
     this.play();
   else
     this.pause();
-
 
 })
