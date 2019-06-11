@@ -1,11 +1,90 @@
 let rellax = new Rellax('.project-info');
 let controller = new ScrollMagic.Controller();
+let allowScroll;
 
 var scroll = new SmoothScroll('a[href*="#"]', {
   speed: 160,
-  offset: 200
+  offset: '50vh'
   // speedAsDuration: true
 });
+
+/////////////////////////////
+////* Animate preloader *////
+/////////////////////////////
+
+window.onload = function () {
+
+  allowScroll = false;
+
+  var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+  console.log('Page load time is ' + loadTime / 1000 + ' seconds.');
+
+  let animateProgressBar = new TweenMax.fromTo('.progress-bar', 1.5, {
+    xPercent: '-120',
+    bottom: '0',
+    ease: Sine.easeInOut
+  }, {
+    xPercent: '0',
+    ease: Sine.easeInOut
+  });
+  // .duration(loadTime);
+
+  let animatePreload = new TweenMax.fromTo('.preload-info', .5, {
+      autoAlpha: 0,
+      ease: Sine.easeInOut
+    }, {
+      autoAlpha: 1,
+      ease: Sine.easeInOut
+    })
+    .delay(1)
+
+  let animateProgressBarUp = new TweenMax.to('.progress-bar', 1.2, {
+      padding: '100vh',
+      ease: Sine.easeInOut
+    })
+    .delay(2)
+
+  let animatePreloaderOut = new TweenMax.fromTo('.preloader', .5, {
+      position: 'fixed',
+      autoAlpha: 1,
+      ease: Sine.easeInOut,
+    }, {
+      display: 'none',
+      autoAlpha: 0,
+      ease: Sine.easeInOut,
+    })
+    .delay(2.7)
+
+  let animatePreloaderH1 = new TweenMax.fromTo('.preloader h1', .5, {
+      autoAlpha: 1,
+      ease: Sine.easeInOut
+    }, {
+      autoAlpha: 0,
+      ease: Sine.easeInOut,
+    })
+    .delay(2)
+
+  setTimeout(() => {
+    allowScroll = true;
+  }, 2700);
+
+}
+
+setInterval(() => {
+
+  if (allowScroll) {
+    document.querySelector('html').style.overflowY = 'scroll';
+  } else if (!allowScroll) {
+    document.querySelector('html').style.overflowY = 'hidden';
+  }
+
+}, 500);
+
+// if (!allowScroll) {
+//   document.querySelector('html').style.overflowY = 'hidden';
+// } else if (allowScroll === true) {
+//   document.querySelector('html').style.overflowY = 'scroll';
+// }
 
 ////////////////////////////////////
 ////* Animate project previews *////
@@ -16,6 +95,7 @@ let projects = document.querySelectorAll('.project')
 Array.prototype.forEach.call(projects, function showProjects(el) {
 
   let overlay = el.querySelectorAll('.overlay');
+  let projectImage = el.querySelectorAll('.project-image img');
   let projectInfo = el.querySelectorAll('.project-info');
   var projectH6 = el.querySelectorAll('.project-info h6');
   var projectParagraph = el.querySelectorAll('.project-info p');
@@ -24,14 +104,43 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
 
   let animatePreview = new TimelineMax();
 
+  // TweenMax.fromTo(
+  //   projectImage,
+  //   2.5, {
+  //     // skewX: 30,
+  //     scale: 1.5
+  //   }, {
+  //     scale: 1,
+  //     // skewX: 0,
+  //     transformOrigin: "0% 100%",
+  //     // repeat: -1,
+  //     // repeatDelay: 1,
+  //     ease: Power2.easeOut
+  //   }
+  // );
+
+  TweenMax.set(".overlay", {
+    perspective: 500
+  });
+
+
   animatePreview
     .fromTo(overlay, 1.2, {
-      skewX: '-40px',
+      skewX: '-40px'
     }, {
       xPercent: -100,
       skewX: 0,
       ease: Sine.easeInOut,
     })
+    .fromTo(projectImage, .9, {
+      scale: 1.1,
+      // skewY: '5px'
+    }, {
+      scale: .98,
+      skewY: 0,
+      delay: .1,
+      ease: Sine.easeInOut,
+    }, '-=1')
     .from(projectInfo, .3, {
       autoAlpha: 0,
       ease: Sine.easeInOut,
@@ -55,6 +164,7 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
   let animateProjects = new ScrollMagic.Scene({
       triggerElement: el,
       offset: -window.innerHeight / 4,
+      // reverse: false,
       // duration: window.innerHeight / 1.3
     })
     .setTween(animatePreview).addTo(controller)
@@ -147,7 +257,7 @@ let aboutIntroBackground = new TweenMax.to('#about-intro', 1.5, {
 new ScrollMagic.Scene({
     triggerElement: '#about-intro',
     triggerHook: 0,
-    duration: window.innerHeight / 2
+    duration: window.innerHeight / 4
   })
   .setTween(aboutIntroBackground)
   .addTo(controller);
@@ -161,8 +271,8 @@ let aboutBackground = new TweenMax.to('#about', 1.5, {
 new ScrollMagic.Scene({
     triggerElement: '#about',
     triggerHook: 0,
-    offset: window.innerHeight / 2,
-    duration: window.innerHeight / 2
+    offset: window.innerHeight / 1.3,
+    duration: window.innerHeight / 4
   })
   .setTween(aboutBackground)
   .addTo(controller);
@@ -245,113 +355,37 @@ new ScrollMagic.Scene({
   .addTo(controller);
 // .addIndicators();
 
-//
 
-if (window.innerWidth <= 800) {
+// if (window.innerWidth <= 800) {
 
-  var projectRellax = document.querySelector('.project-info-js').setAttribute('data-rellax-percentage', '1.5')
-  var projectRellax = document.querySelector('.project-info-js').setAttribute('data-rellax-speed', '2')
+  console.log(document.querySelector('.project-info').attributes);
+  
+  var projectRellax = document.querySelector('.project-info').setAttribute('data-rellax-speed', '2');
+  // var projectRellax = document.querySelector('.project-info').setAttribute('rellaxPercentage', '2');
 
-}
+  console.log(document.querySelector('.project-info').attributes);
 
-window.onload = function () {
+  // .setAttribute('rellaxPercentage', '2');
 
-
-  var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-  console.log('Page load time is ' + loadTime / 1000 + ' seconds.');
-
-  let animateProgressBar = new TweenMax.fromTo('.progress-bar', 1.5, {
-    xPercent: '-120',
-    bottom: '0',
-    ease: Sine.easeInOut
-  }, {
-    xPercent: '0',
-    ease: Sine.easeInOut
-  });
-  // .duration(loadTime);
-
-  let animatePreload = new TweenMax.fromTo('.preload-info', .5, {
-      autoAlpha: 0,
-      ease: Sine.easeInOut
-    }, {
-      autoAlpha: 1,
-      ease: Sine.easeInOut
-    })
-    .delay(1)
-
-  let animateProgressBarUp = new TweenMax.to('.progress-bar', 1.2, {
-      padding: '100vh',
-      ease: Sine.easeInOut
-    })
-    .delay(2)
-
-  let animatePreloaderOut = new TweenMax.fromTo('.preloader', .5, {
-      autoAlpha: 1,
-      ease: Sine.easeInOut,
-    }, {
-      autoAlpha: 0,
-      ease: Sine.easeInOut,
-    })
-    .delay(2.7)
-
-  let animatePreloaderH1 = new TweenMax.fromTo('.preloader h1', .5, {
-      autoAlpha: 1,
-      ease: Sine.easeInOut
-    }, {
-      autoAlpha: 0,
-      ease: Sine.easeInOut
-    })
-    .delay(2)
-
-}
+  //  var projectRellax = document.querySelector('.project-info').attributes["data-rellax-speed"] = "-1";
 
 
 
-// Disable scroll
-
-let preloader = document.querySelector('.preloader')
-
-if (preloader.style.visibility = 'hidden') {
-
-  console.log('hi');
-
-}
-
-// let preloader = document.querySelector('.preloader')
-
-setInterval(() => {
-
-  // var myStyle = document.getElementById("myDiv").offsetLeft;
-
-
-
-  // } else if (preloader.style.opacity = '0') {
-
-  //   console.log('hidden');
-
-  // }
-
-}, 1000);
-
-
-// window.onload = function () {
-//   var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-//   console.log('Page load time is ' + loadTime / 1000 + ' seconds.');
 // }
+
 
 var lazyLoadInstance = new LazyLoad({
   elements_selector: '.project-image img, video',
-  // elements_selector: 'video'
 });
 
 // Pause/play header video
 
-document.querySelector('video').addEventListener('mousedown', function() {
-  
-    if (this.paused)
-      this.play();
-    else
-      this.pause();
+document.querySelector('video').addEventListener('mousedown', function () {
+
+  if (this.paused)
+    this.play();
+  else
+    this.pause();
 
 
 })
