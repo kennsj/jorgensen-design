@@ -728,6 +728,13 @@ li {
 
 @media only screen and (max-width: 800px) {
 
+    .progress-bar {
+        position: absolute;
+        bottom: -1vh;
+        left: 0;
+        height: 3vh;
+    }
+
     header {
         width: 80vw;
     }
