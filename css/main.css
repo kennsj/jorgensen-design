@@ -286,6 +286,7 @@ section {
     grid-row: 1 / span 3;
     width: 120%;
     right: -5vw;
+    top: -5vh;
 }
 
 .project-right .project-image {
@@ -826,7 +827,7 @@ li {
     }
 
     .mobile-margin {
-        margin: 20vh 0;
+        margin: 15vh 0;
     }
 
     .project-left .project-info {
@@ -931,12 +932,17 @@ li {
         font-size: .6em;
     }
 
+    .project-left .project-image {
+        top: -7.5vh;
+    }
+
     .all-projects-link a {
-        margin-top: 10vh;
+        margin-top: 0;
     }
 
     #about-intro {
         height: 140vh;
+        margin-top: 0;
     }
 
     #experience {
