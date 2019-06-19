@@ -126,6 +126,7 @@ header video {
     margin: 0 -10vw;
     padding: 0;
     width: 90vw;
+    background-color: #252525;
 }
 
 .header-preview a {
@@ -972,7 +973,7 @@ li {
     }
 
     #about-intro {
-        height: 140vh;
+        /* height: 140vh; */
         margin-top: 0;
     }
 
