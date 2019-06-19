@@ -129,6 +129,18 @@ header video {
     background-color: #252525;
 }
 
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: -10vw;
+    background-color: rgba(216, 216, 216, 0.15);
+    width: 90vw;
+    height: 100%;
+    z-index: 500;
+    user-select: none;
+    pointer-events: none;
+}
+
 .header-preview a {
     color: #F2ECE5;
 }

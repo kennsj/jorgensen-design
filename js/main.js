@@ -120,7 +120,7 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
 
 
   animatePreview
-    .fromTo(overlay, 1.2, {
+    .fromTo(overlay, 1.3, {
       skewX: '-40px'
     }, {
       xPercent: -100,
@@ -138,7 +138,7 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
     }, '-=1')
     .from(projectInfo, .3, {
       autoAlpha: 0,
-      ease: Sine.easeInOut,
+      ease: Sine.easeInOut
     }, '-=.6')
     .from(projectH6, .3, {
       autoAlpha: 0,
