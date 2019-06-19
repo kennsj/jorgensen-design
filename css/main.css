@@ -58,7 +58,7 @@ html {
     visibility: visible;
     overflow: hidden;
     z-index: 1000;
-    display: none;
+    /* display: none; */
 }
 
 .preload-info {
