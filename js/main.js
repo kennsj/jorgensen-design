@@ -53,14 +53,11 @@ window.onload = function () {
     })
     .delay(2.7)
 
-  let animatePreloaderH1 = new TweenMax.fromTo('.preloader h1', .5, {
+  let animatePreloaderH1 = new TweenMax.to('.preloader h1', 2.5, {
       autoAlpha: 1,
       ease: Sine.easeInOut
-    }, {
-      autoAlpha: 0,
-      ease: Sine.easeInOut,
     })
-    .delay(2)
+    // .delay(.5)
 
   setTimeout(() => {
     allowScroll = true;
@@ -153,8 +150,8 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
       yPercent: '+=20px',
       ease: Sine.easeInOut,
     }, '-=.3')
-    .from(projectLink, .4, {
-      autoAlpha: 0,
+    .to(projectLink, .4, {
+      autoAlpha: 1,
       ease: Sine.easeInOut,
     }, '-=.2');
 
@@ -248,33 +245,46 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
 ////* Animate background colors *////
 /////////////////////////////////////
 
-let aboutIntroBackground = new TweenMax.to('#about-intro', 1.5, {
+let aboutIntroBackground = new TweenMax.to('#about-intro, #about, html', 1.5, {
   backgroundColor: '#252525'
 });
 
 new ScrollMagic.Scene({
     triggerElement: '#about-intro',
-    triggerHook: 0,
+    triggerHook: .5,
     duration: window.innerHeight / 4
   })
   .setTween(aboutIntroBackground)
   .addTo(controller);
-// .addIndicators();
+  // .addIndicators();
 
-let aboutBackground = new TweenMax.to('#about', 1.5, {
+// let aboutBackground = new TweenMax.to('#about', 1.5, {
+//   backgroundColor: '#F2ECE5'
+// });
+
+// new ScrollMagic.Scene({
+//     triggerElement: '#about',
+//     triggerHook: 0,
+//     offset: window.innerHeight / 2,
+//     duration: window.innerHeight / 12
+//   })
+//   .setTween(aboutBackground)
+//   .addTo(controller)
+//   .addIndicators();
+
+let aboutBackground = new TweenMax.to('footer, #about', 1.5, {
   backgroundColor: '#F2ECE5'
 });
 
-// create a scene
 new ScrollMagic.Scene({
-    triggerElement: '#about',
+    triggerElement: 'footer',
     triggerHook: 0,
-    offset: window.innerHeight / 1.3,
+    offset: -window.innerHeight / 2,
     duration: window.innerHeight / 4
   })
   .setTween(aboutBackground)
   .addTo(controller);
-// .addIndicators();
+  // .addIndicators();
 
 ////////////////////////////////////
 ////* Animate about me section *////
@@ -292,12 +302,12 @@ animateAboutElement
 
 new ScrollMagic.Scene({
     triggerElement: '#about',
-    triggerHook: .85,
-    duration: window.innerHeight
+    triggerHook: 1,
+    duration: window.innerHeight / 2
   })
   .setTween(animateAboutElement)
   .addTo(controller);
-// .addIndicators();
+  // .addIndicators();
 
 let animateAboutParagraph = new TimelineMax();
 

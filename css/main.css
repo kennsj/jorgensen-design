@@ -22,7 +22,7 @@
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     outline: 1px solid rgba(0, 0, 0, .0);
     /* outline: 1px solid rgba(0, 0, 0, .6) */
 }
@@ -47,21 +47,18 @@ html {
 /* Preloader styling */
 
 .preloader {
-    /* position: fixed; */
     width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
     margin: 0;
     padding: 0;
-    /* background: #252525; */
     background: #252525;
     color: #FBF4EC;
     visibility: visible;
-    /* opacity: 1; */
     overflow: hidden;
     z-index: 1000;
-    /* display: none; */
+    display: none;
 }
 
 .preload-info {
@@ -75,7 +72,6 @@ html {
     top: 45vh;
     left: 10vw;
     width: 100%;
-    /* text-align: center; */
     font-weight: 400;
 }
 
@@ -85,9 +81,7 @@ html {
     left: 0;
     height: 1vh;
     width: 100%;
-    /* background: #2FEAB2; */
     background: #FBF4EC;
-    /* background: #252525; */
 }
 
 /* Header styling */
@@ -103,11 +97,11 @@ nav {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     height: 50px;
     margin-bottom: 15vh;
 }
@@ -132,7 +126,6 @@ header video {
     margin: 0 -10vw;
     padding: 0;
     width: 90vw;
-    /* user-select: none; */
 }
 
 .header-preview a {
@@ -156,7 +149,7 @@ h1 {
 }
 
 header h1 {
-    font-size: 5em;
+    /* font-size: 5em; */
 }
 
 h2 {
@@ -172,16 +165,14 @@ h2 {
 }
 
 h3 {
-    /* width: 100%; */
+    width: 30%;
     font-size: 2em;
     color: #252525;
     font-weight: 700;
-    text-align: center;
-    /* line-height: 5em; */
+    text-align: right;
 }
 
 h5 {
-    /* font-size: 1.2em; */
     font-weight: 400;
 }
 
@@ -245,10 +236,8 @@ section {
 .project-info {
     background: #252525;
     padding: 100px 90px 100px 90px;
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 20px rgba(0, 0, 0, 0.22); */
-    /* box-shadow: 0 5px 10px rgba(73, 74, 78, 0.15), 0 15px 40px rgba(31, 32, 34, 0.62); */
     -webkit-box-shadow: 0 5px 10px rgba(73, 74, 78, 0.19), 0 15px 40px rgba(31, 32, 34, 0.36);
-            box-shadow: 0 5px 10px rgba(73, 74, 78, 0.19), 0 15px 40px rgba(31, 32, 34, 0.36);
+    box-shadow: 0 5px 10px rgba(73, 74, 78, 0.19), 0 15px 40px rgba(31, 32, 34, 0.36);
 }
 
 .project-image {
@@ -274,7 +263,6 @@ section {
 
 .project .project-image img {
     width: 100%;
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.12); */
 }
 
 .project .project-image .overlay {
@@ -284,10 +272,8 @@ section {
     width: 210%;
     height: 180%;
     margin: -30% 0 0 -80%;
-    /* margin-top: -60px; */
     background: #F2ECE5;
     overflow: hidden;
-    /* transform: skewX(-50px); */
     z-index: 1;
 }
 
@@ -323,19 +309,17 @@ section {
     line-height: 1.4
 }
 
-
 .project-info a {
+    opacity: 0;
     font-size: .8em;
-    /* line-height: 1.7em; */
 }
 
-.all-projects-link a {
+.more-link a {
     position: absolute;
     right: 15vw;
-    margin-top: -10vh;
+    margin-top: -20vh;
     font-size: 1em;
     color: #252525;
-    /* text-align: right; */
 }
 
 /* About styling */
@@ -343,43 +327,52 @@ section {
 #about-intro {
     position: relative;
     background: #F2ECE5;
-    height: 120vh;
+    /* height: 120vh; */
     width: 100%;
     margin-top: 20vh;
-    padding: 20vh 15vw;
+    padding: 0vh 15vw;
 }
 
-.about-info h2 {
-    position: absolute;
-    left: 0;
-    bottom: 40vh;
-    width: 100%;
-    text-align: center;
+.about-intro-h1 {
+    color: #F2ECE5;
     mix-blend-mode: difference;
 }
 
-.fixed-h1 {
-    /* position: relative; */
-    top: 1px;
-    padding: 0;
+.about-intro h2 {
+    color: #F2ECE5;
+    margin-top: 20vh;
+    width: 70%;
+}
+
+.about-intro h2 span {
+    mix-blend-mode: none;
+}
+
+.turqoise-span {
+    color: #2FEAB2;
+}
+
+.blend-mode {
     color: #F2ECE5;
     mix-blend-mode: difference;
 }
 
 #about {
-    /* height: 200vh; */
+    position: relative;
     width: 100%;
-    background-color: #252525;
+    /* background-color: #252525; */
+    background-color: #F2ECE5;
+    z-index: 500;
 }
 
 .about-me {
+    position: relative;
     width: 55vw;
-    margin: 0 auto 20vh auto;
+    margin: 20vh auto;
     padding: 9em 7em 8em 7em;
     background: #F2ECE5;
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
     -webkit-box-shadow: 0 5px 10px rgba(73, 74, 78, 0.09), 0 15px 40px rgba(31, 32, 34, 0.06);
-            box-shadow: 0 5px 10px rgba(73, 74, 78, 0.09), 0 15px 40px rgba(31, 32, 34, 0.06);
+    box-shadow: 0 5px 10px rgba(73, 74, 78, 0.09), 0 15px 40px rgba(31, 32, 34, 0.06);
 }
 
 .about-me p {
@@ -393,16 +386,23 @@ section {
     color: #252525;
 }
 
+#about h5 a {
+    top: 60vh;
+    color: #F2ECE5;
+    /* mix-blend-mode: difference; */
+}
+
 #experience {
-    /* height: 100vh; */
     width: 70vw;
-    margin: 20vh auto 0 auto;
+    margin: 0 auto 0 auto;
     padding-bottom: 5vh;
+    color: #F2ECE5;
 }
 
 .experience-lists {
-    /* display: flex; */
-    margin: 30vh 0;
+    /* display: flex;
+    margin-top: 10vh;
+    margin-left: -20vw; */
 }
 
 .tool-list,
@@ -412,12 +412,11 @@ section {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    /* width: 40vw; */
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     margin: 10vh auto;
     padding: 0 15vw;
 }
@@ -425,26 +424,30 @@ section {
 .tool-list h3,
 .exploring-list h3 {
     font-size: 1.5em;
+    color: #F2ECE5;
 }
 
 .tool-list ul li,
 .exploring-list ul li {
-    /* display: table-row; */
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     width: 15vw;
-    margin: 0 10vw 1em 0;
+    margin: .5em 10vw 1em 0;
 }
 
 /* Footer styling */
 
 footer {
+    /* background-color: #252525;
+    color: #F2ECE5; */
+    /* background-color: #F2ECE5; */
+    height: 100vh;
     background-color: #252525;
-    color: #F2ECE5;
+    color: #252525;
     margin: 0;
-    padding: 7.5vw 15vw;
+    padding: 25vh 15vw;
 }
 
 footer h1 {
@@ -455,7 +458,8 @@ footer a {
     position: relative;
     font-size: 1em;
     font-weight: 400;
-    color: #F2ECE5;
+    /* color: #F2ECE5; */
+    color: #252525;
 }
 
 .footer-info {
@@ -464,11 +468,11 @@ footer a {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     margin-top: 5em;
 }
 
@@ -495,20 +499,12 @@ footer a {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
 }
 
 li {
     list-style: none;
-}
-
-#about {
-    scroll-behavior: smooth;
-}
-
-#contact {
-    scroll-behavior: smooth;
 }
 
 .footer-links li a {
@@ -578,6 +574,10 @@ li {
     h2 {
         font-size: calc(2.5em - 1vw);
         line-height: 1.5em
+    }
+
+    .experience-lists {
+        width: 80vw;
     }
 
     .project-left .project-image {
@@ -708,11 +708,13 @@ li {
         width: 240%;
         height: 200%;
         margin: -35% 0 0 -90%;
-        /* margin-top: -60px; */
         background: #F2ECE5;
         overflow: hidden;
-        /* transform: skewX(-50px); */
         z-index: 1;
+    }
+
+    .more-link a {
+        margin-top: 0;
     }
 
     #about-intro {
@@ -806,7 +808,6 @@ li {
         margin: 15vh 0;
     }
 
-
     .project-right .project-image {
         position: relative;
         grid-column: 1 / span 12;
@@ -834,6 +835,12 @@ li {
         padding: 20vh 10vw 10vh 10vw;
     }
 
+    .about-intro h2 {
+        color: #F2ECE5;
+        margin-top: 20vh;
+        width: 100%;
+    }
+
     .about-me {
         width: 80%;
         padding: 7em 5em;
@@ -844,13 +851,55 @@ li {
     }
 
     .experience-lists {
+        width: 100%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        margin: 10vh 0;
+    }
+
+
+
+    /* .tool-list,
+    .exploring-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 10vh auto;
+        padding: 0 5vw;
+    } */
+
+    .tool-list h3,
+    .exploring-list h3 {
+        text-align: left;
+    }
+
+    .tool-list ul li,
+    .exploring-list ul li {
+        width: 70%;
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .experience-lists {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
         margin: 10vh 0;
     }
 
@@ -861,19 +910,23 @@ li {
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        /* justify-content: start; */
-        /* width: 40vw; */
-        margin: 10vh auto;
-        padding: 0 5vw;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 80%;
+        height: 100px;
+        font-size: .8em;
+        margin: 10vh 10vw;
+        padding: 0;
     }
 
-    .tool-list h3,
-    .exploring-list h3 {
-        font-size: 1.5em;
-        text-align: left;
-        margin-bottom: 1.6em;
+    .tool-list ul,
+    .exploring-list ul {
+        -webkit-column-count: 2;
+        column-count: 2;
+        -webkit-column-gap: 200px;
+        column-gap: 30px;
+        padding: 0;
+        margin: 0;
     }
 
     .tool-list ul li,
@@ -914,7 +967,7 @@ li {
         top: -7.5vh;
     }
 
-    .all-projects-link a {
+    .more-link a {
         margin-top: 0;
     }
 
@@ -937,8 +990,8 @@ li {
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
         margin: 10vh 0;
     }
 
@@ -949,9 +1002,8 @@ li {
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        /* justify-content: start; */
+        -ms-flex-direction: column;
+        flex-direction: column;
         width: 80%;
         height: 100px;
         font-size: .8em;
@@ -980,10 +1032,8 @@ li {
     .exploring-list ul li {
         width: 100%;
         height: 50px;
-        /* margin: 2em 0 1em 0; */
         margin: 0;
         padding: 0;
-        /* padding-left: 1.5em; */
     }
 
     footer {
@@ -993,8 +1043,8 @@ li {
     .footer-info {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 
     .contact-margin {
@@ -1048,6 +1098,10 @@ li {
         width: 40vw;
         margin: 0;
         padding-left: .5em;
+    }
+
+    .exploring-list h3 {
+        margin-top: 5em;
     }
 
 }
