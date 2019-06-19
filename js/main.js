@@ -162,7 +162,7 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
       // reverse: false,
       // duration: window.innerHeight / 1.3
     })
-    .setTween(animatePreview).addTo(controller)
+    .setTween(animatePreview).addTo(controller);
   // .addIndicators()
 
 });
@@ -350,7 +350,7 @@ new ScrollMagic.Scene({
     duration: window.innerHeight / 2
   })
   .setTween(hideH1About)
-  .addTo(controller)
+  .addTo(controller);
 // .addIndicators();
 
 new ScrollMagic.Scene({
