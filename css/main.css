@@ -249,8 +249,8 @@ section {
 .project-info {
     background: #252525;
     padding: 100px 90px 100px 90px;
-    -webkit-box-shadow: 0 5px 10px rgba(73, 74, 78, 0.19), 0 15px 40px rgba(31, 32, 34, 0.36);
-    box-shadow: 0 5px 10px rgba(73, 74, 78, 0.19), 0 15px 40px rgba(31, 32, 34, 0.36);
+    -webkit-box-shadow: 0 5px 10px rgba(44, 45, 49, 0.19), 0 15px 40px rgba(31, 32, 34, 0.36);
+    box-shadow: 0 5px 10px rgba(44, 45, 49, 0.19), 0 15px 40px rgba(31, 32, 34, 0.36);
 }
 
 .project-image {
