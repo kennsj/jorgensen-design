@@ -17,7 +17,7 @@ window.onload = function () {
 
   // var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
 
-  let animateProgressBar = new TweenMax.fromTo('.progress-bar', 1.5, {
+  let animateProgressBar = new TweenMax.fromTo('.progress-bar', 2, {
     xPercent: '-120',
     bottom: '0',
     ease: Sine.easeInOut
@@ -248,12 +248,12 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
 ////* Animate background colors *////
 /////////////////////////////////////
 
-let aboutIntroBackground = new TweenMax.to('#about-intro, #about, html', 1.5, {
+let aboutIntroBackground = new TweenMax.to('#about, html', 1.5, {
   backgroundColor: '#252525'
 });
 
 new ScrollMagic.Scene({
-    triggerElement: '#about-intro',
+    triggerElement: '#about',
     triggerHook: .5,
     duration: window.innerHeight / 4
   })
@@ -275,7 +275,7 @@ new ScrollMagic.Scene({
 //   .addTo(controller)
 //   .addIndicators();
 
-let aboutBackground = new TweenMax.to('footer, #about', 1.5, {
+let aboutBackground = new TweenMax.to('footer, #experience, html', 1.5, {
   backgroundColor: '#F2ECE5'
 });
 

@@ -22,10 +22,11 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     outline: 1px solid rgba(0, 0, 0, .0);
-    /* outline: 1px solid rgba(0, 0, 0, .6) */
+    outline: 1px solid rgba(0, 0, 0, .6)
 }
 
 html {
+    /* background: #F2ECE5; */
     background: #F2ECE5;
     color: #252525;
     font-family: Graphik, sans-serif;
@@ -71,7 +72,7 @@ html {
     position: absolute;
     bottom: -1vh;
     left: 0;
-    height: 1vh;
+    height: 2vh;
     width: 100%;
     background: #FBF4EC;
 }
@@ -129,6 +130,9 @@ header video {
     width: 90vw;
     height: 100%;
     z-index: 500;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     pointer-events: none;
 }
@@ -224,6 +228,11 @@ nav a {
 }
 
 /* Main content styling */
+
+main {
+    padding: 0;
+    margin: 0;
+}
 
 section {
     width: 70vw;
@@ -329,7 +338,7 @@ section {
 
 /* About styling */
 
-#about-intro {
+#about {
     position: relative;
     background: #F2ECE5;
     /* height: 120vh; */
@@ -338,7 +347,8 @@ section {
     padding: 0vh 15vw;
 }
 
-.about-intro-h1 {
+/* .about-intro-h1 */
+#about h1 {
     color: #F2ECE5;
     mix-blend-mode: difference;
 }
@@ -364,16 +374,21 @@ section {
 
 #about {
     position: relative;
-    width: 100%;
-    /* background-color: #252525; */
     background-color: #F2ECE5;
+    width: 100%;
+    padding: 0vh 15vw;
+    /* background-color: #252525; */
     z-index: 500;
+}
+
+.about-intro {
+    margin-bottom: 20vh;
 }
 
 .about-me {
     position: relative;
     width: 55vw;
-    margin: 20vh auto;
+    margin: 0 auto;
     padding: 9em 7em 8em 7em;
     background: #F2ECE5;
     -webkit-box-shadow: 0 5px 10px rgba(73, 74, 78, 0.09), 0 15px 40px rgba(31, 32, 34, 0.06);
@@ -398,9 +413,11 @@ section {
 }
 
 #experience {
-    width: 70vw;
-    margin: 0 auto 0 auto;
-    padding-bottom: 5vh;
+    width: 100%;
+    margin: 0;
+    padding: 20vh 15vw;
+    /* margin: 0 auto 0 auto; */
+    /* padding-bottom: 5vh; */
     color: #F2ECE5;
 }
 
@@ -421,9 +438,13 @@ section {
     flex-direction: row;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 10vh auto;
-    padding: 0 15vw;
+    /* padding: 0 15vw; */
+}
+
+.exploring-list {
+    margin-bottom: 0;
 }
 
 .tool-list h3,
@@ -448,11 +469,21 @@ footer {
     /* background-color: #252525;
     color: #F2ECE5; */
     /* background-color: #F2ECE5; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     height: 100vh;
     background-color: #252525;
     color: #252525;
     margin: 0;
-    padding: 25vh 15vw;
+    padding: 20vh 15vw;
 }
 
 footer h1 {
@@ -626,7 +657,11 @@ li {
         z-index: 2;
     }
 
-    #about-intro {
+    #about {
+        padding: 10vh 10vw;
+    }
+
+    #experience {
         padding: 10vh 10vw;
     }
 
@@ -725,10 +760,6 @@ li {
 
     .more-link a {
         margin-top: 0;
-    }
-
-    #about-intro {
-        padding: 10vh 10vw;
     }
 
     .about-me {
@@ -834,14 +865,18 @@ li {
     }
 
     .project-left .project-info {
-        padding: 7em 5em;
+        padding: 4em 5em;
         grid-column: 1 / span 12;
         grid-row: 4;
         margin: -2em auto;
         font-size: .8em;
     }
 
-    #about-intro {
+    #about {
+        padding: 20vh 10vw 10vh 10vw;
+    }
+
+    #experience {
         padding: 20vh 10vw 10vh 10vw;
     }
 
@@ -872,34 +907,21 @@ li {
         margin: 10vh 0;
     }
 
-
-
-    /* .tool-list,
-    .exploring-list {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        margin: 10vh auto;
-        padding: 0 5vw;
-    } */
-
     .tool-list h3,
     .exploring-list h3 {
         text-align: left;
+        margin-bottom: 1em;
     }
 
     .tool-list ul li,
     .exploring-list ul li {
         width: 70%;
         text-align: left;
-        margin-bottom: 0;
+        margin: 0;
+        padding: 2em 0 2em 2em;
+        /* margin: 2em 10vw 1em 0;
+        padding-left: 1.5em; */
+        height: 1em;
     }
 
     .experience-lists {
@@ -937,12 +959,6 @@ li {
         column-gap: 30px;
         padding: 0;
         margin: 0;
-    }
-
-    .tool-list ul li,
-    .exploring-list ul li {
-        margin: 2em 10vw 1em 0;
-        padding-left: 1.5em;
     }
 
 }
@@ -981,17 +997,13 @@ li {
         margin-top: 0;
     }
 
-    #about-intro {
-        /* height: 140vh; */
-        margin-top: 0;
-    }
-
     #experience {
-        width: 100%;
+        /* padding: 20vh 10vw 10vh 10vw; */
+        padding: 0;
     }
 
     #experience h1 {
-        margin-left: 10vw;
+        margin-left: 2.5vw;
     }
 
     .experience-lists {
@@ -1014,8 +1026,8 @@ li {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        width: 80%;
-        height: 100px;
+        width: 70vw;
+        /* height: 100px; */
         font-size: .8em;
         margin: 10vh 10vw;
         padding: 0;
@@ -1030,6 +1042,7 @@ li {
 
     .tool-list ul,
     .exploring-list ul {
+        /* width: 20vw; */
         -webkit-column-count: 2;
         column-count: 2;
         -webkit-column-gap: 200px;
@@ -1038,12 +1051,23 @@ li {
         margin: 0;
     }
 
-    .tool-list ul li,
+    /* .tool-list ul li,
     .exploring-list ul li {
         width: 100%;
         height: 50px;
         margin: 0;
         padding: 0;
+    } */
+
+    .tool-list ul li,
+    .exploring-list ul li {
+        width: 100%;
+        text-align: left;
+        margin: 0;
+        padding: 2em 0 2em 2em;
+        /* margin: 2em 10vw 1em 0;
+        padding-left: 1.5em; */
+        height: 1em;
     }
 
     footer {
@@ -1103,12 +1127,12 @@ li {
         padding: 5em 2.5em;
     }
 
-    .tool-list ul li,
+    /* .tool-list ul li,
     .exploring-list ul li {
         width: 40vw;
         margin: 0;
         padding-left: .5em;
-    }
+    } */
 
     .exploring-list h3 {
         margin-top: 5em;
