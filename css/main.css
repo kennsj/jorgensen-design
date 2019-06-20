@@ -576,6 +576,11 @@ li {
         margin: 0 -7.5vw;
     }
 
+    .video-overlay {
+        width: 95vw;
+        left: -7.5vw;
+    }
+
     section {
         width: 80vw;
     }
