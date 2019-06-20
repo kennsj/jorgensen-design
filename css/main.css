@@ -1,5 +1,3 @@
-/* @import url('fonts.css'); */
-
 /* Load fonts */
 
 @font-face {
@@ -28,14 +26,8 @@
 }
 
 html {
-    /* background: #FBF4EC; */
-    /* background: #F2ECE5; */
     background: #F2ECE5;
     color: #252525;
-    /* font-family: 'Inter', sans-serif; */
-    /* font-family: 'Poppins', sans-serif; */
-    /* font-family: 'Work Sans', sans-serif; */
-    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, Graphik, sans-serif; */
     font-family: Graphik, sans-serif;
     font-size: calc(12px + .35vw);
     font-weight: 400;

@@ -136,8 +136,11 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
       delay: .1,
       ease: Sine.easeInOut,
     }, '-=1')
-    .from(projectInfo, .3, {
-      autoAlpha: 0,
+    .fromTo(projectInfo, .3, {
+      opacity: 0,
+      ease: Sine.easeInOut
+    }, {
+      opacity: 1,
       ease: Sine.easeInOut
     }, '-=.6')
     .from(projectH6, .3, {
