@@ -1031,13 +1031,28 @@ li {
         margin-top: 0;
     }
 
+    #about {
+        padding: 0;
+    }
+
+    #about h1,
+    #about h2 {
+        margin-left: 10vw;
+    }
+
+    .info-box {
+        width: 90vw;
+        /* margin-left: -5vw; */
+        padding: 4.5em 3em;
+    }
+
     #experience {
         /* padding: 20vh 10vw 10vh 10vw; */
         padding: 0;
     }
 
     #experience h1 {
-        margin-left: 2.5vw;
+        margin-left: 10vw;
     }
 
     .experience-lists {
