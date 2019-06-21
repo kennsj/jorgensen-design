@@ -53,7 +53,7 @@ window.onload = function () {
     })
     .delay(2.7)
 
-  let animatePreloaderH1 = new TweenMax.to('.preloader h1', 2.5, {
+  let animatePreloaderH1 = new TweenMax.to('.preloader h1', .3, {
       autoAlpha: 1,
       ease: Sine.easeInOut
     })
@@ -66,13 +66,11 @@ window.onload = function () {
 }
 
 setInterval(() => {
-
   if (allowScroll) {
     document.querySelector('html').style.overflowY = 'scroll';
   } else if (!allowScroll) {
     document.querySelector('html').style.overflowY = 'hidden';
   }
-
 }, 500);
 
 // if (!allowScroll) {
@@ -275,7 +273,7 @@ new ScrollMagic.Scene({
 //   .addTo(controller)
 //   .addIndicators();
 
-let aboutBackground = new TweenMax.to('footer, #experience, html', 1.5, {
+let aboutBackground = new TweenMax.to('html', 1.5, {
   backgroundColor: '#F2ECE5'
 });
 
