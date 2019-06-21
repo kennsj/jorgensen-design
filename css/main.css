@@ -65,6 +65,7 @@ html {
     top: 45vh;
     left: 10vw;
     width: 100%;
+    margin: 0;
     font-weight: 400;
 }
 
@@ -155,10 +156,11 @@ h1 {
     font-weight: 700;
     font-size: calc(4em - 1vw);
     z-index: 200;
+    margin-bottom: 20vh;
 }
 
 header h1 {
-    /* font-size: 5em; */
+    margin: 0;
 }
 
 h2 {
@@ -179,6 +181,11 @@ h3 {
     color: #252525;
     font-weight: 700;
     text-align: right;
+}
+
+h4 {
+    font-size: 1.7em;
+    margin-bottom: 1em;
 }
 
 h5 {
@@ -363,6 +370,23 @@ section {
     mix-blend-mode: none;
 }
 
+.info-box {
+    width: 40vw;
+    background: #F2ECE5;
+    color: #252525;
+    margin: 0 auto 20vh auto;
+    padding: 5em 7em;
+    font-size: 1em;
+    -webkit-box-shadow: 0 5px 10px rgba(73, 74, 78, 0.09), 0 15px 40px rgba(31, 32, 34, 0.06);
+    box-shadow: 0 5px 10px rgba(73, 74, 78, 0.09), 0 15px 40px rgba(31, 32, 34, 0.06);
+}
+
+.info-box a {
+    position: relative;
+    margin: 2em 0 0 0;
+    color: #252525;
+}
+
 .turqoise-span {
     color: #2FEAB2;
 }
@@ -415,7 +439,7 @@ section {
 #experience {
     width: 100%;
     margin: 0;
-    padding: 20vh 15vw;
+    padding: 10vh 15vw 0 15vw;
     /* background: #252525; */
     /* margin: 0 auto 0 auto; */
     /* padding-bottom: 5vh; */
@@ -441,7 +465,7 @@ section {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-around;
-    margin: 20vh auto;
+    margin: 0 auto;
     /* padding: 0 15vw; */
 }
 
@@ -883,6 +907,11 @@ li {
 
     #experience {
         padding: 20vh 10vw 10vh 10vw;
+    }
+
+    .info-box {
+        width: 80vw;
+        padding: 4em 6em;
     }
 
     .about-intro h2 {

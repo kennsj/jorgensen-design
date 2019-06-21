@@ -54,10 +54,10 @@ window.onload = function () {
     .delay(2.7)
 
   let animatePreloaderH1 = new TweenMax.to('.preloader h1', .3, {
-      autoAlpha: 1,
-      ease: Sine.easeInOut
-    })
-    // .delay(.5)
+    autoAlpha: 1,
+    ease: Sine.easeInOut
+  })
+  // .delay(.5)
 
   setTimeout(() => {
     allowScroll = true;
@@ -96,21 +96,6 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
   var projectLink = el.querySelectorAll('.project-info a');
 
   let animatePreview = new TimelineMax();
-
-  // TweenMax.fromTo(
-  //   projectImage,
-  //   2.5, {
-  //     // skewX: 30,
-  //     scale: 1.5
-  //   }, {
-  //     scale: 1,
-  //     // skewX: 0,
-  //     transformOrigin: "0% 100%",
-  //     // repeat: -1,
-  //     // repeatDelay: 1,
-  //     ease: Power2.easeOut
-  //   }
-  // );
 
   TweenMax.set(".overlay", {
     perspective: 500
@@ -168,79 +153,61 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
 
 });
 
-/////////////////////////////////
-////* Animate video preview *////
-/////////////////////////////////
+//////////////////////////////
+////* Animate info boxes *////
+//////////////////////////////
 
-// window.onload = function () {
 
-//   let animateVideOverlay = new TweenMax.to('.video-overlay', .9, {
-//       bottom: '-100vw',
-//       // opacity: 0,
-//       ease: Power4.easeIn,
-//       duration: 0
-//     })
-//     .delay(.2)
+let infoBoxes = document.querySelectorAll('.info-box')
 
-// }
+Array.prototype.forEach.call(infoBoxes, function showProjects(el) {
 
-// window.onload = function () {
+  let infoBoxHeading = el.querySelectorAll('.info-box h4');
+  let infoBoxParagraph = el.querySelectorAll('.info-box p');
 
-//   let animateVideOverlay = new TweenMax.fromTo('.video-overlay', .9, {
-//       scale: 1.7,
-//       xPercent: '10%',
-//       skewX: '-35px',
-//       autoAlpha: 1,
-//       ease: Sine.easeIn,
-//       duration: 0
-//     }, {
-//       skewX: '0',
-//       xPercent: '-125%',
-//     })
-//     .delay(.3)
+  let animateInfoBoxes = new TimelineMax();
 
-//   let hideVideoOverlay = new TweenMax.to('.video-overlay', 1, {
-//     autoAlpha: 0
-//   }).delay(1)
 
-// }
+  animateInfoBoxes
+    .fromTo(el, 1.3, {
+      autoAlpha: 0,
+      skewX: '-2px'
+    }, {
+      autoAlpha: 1,
+      skewX: 0,
+      ease: Sine.easeInOut,
+    })
+    // .fromTo(el, 1.3, {
+    //   autoAlpha: 0
+    // }, {
+    //   autoAlpha: 1,
+    //   ease: Sine.easeInOut,
+    // })
+    .fromTo(infoBoxHeading, .9, {
+      opacity: 0
+    }, {
+      opacity: 1,
+      ease: Sine.easeInOut,
+    }, '-=1')
+    .fromTo(infoBoxParagraph, .3, {
+      opacity: 0,
+      ease: Sine.easeInOut
+    }, {
+      opacity: 1,
+      ease: Sine.easeInOut
+    }, '-=.6')
 
-///////////////////////////////
-////* Animate quote texts *////
-///////////////////////////////
+  let animateInfoBox = new ScrollMagic.Scene({
+      triggerElement: el,
+      triggerHook: 0,
+      offset: -window.innerHeight / 2,
+      duration: window.innerHeight / 4
+    })
+    .setTween(animateInfoBoxes)
+    .addTo(controller);
+    // .addIndicators();
 
-// let quoteHeaders = document.querySelectorAll('h3')
-
-// Array.prototype.forEach.call(quoteHeaders, function showHeaders(el) {
-
-//   let animateHeaders = new TimelineMax();
-
-//   animateHeaders
-//     .fromTo(el, .8, {
-//       // opacity: 0,
-//       // autoAlpha: 0,
-//       right: '-80vw',
-//       // visibility: 'hidden',
-//       // ease: Power4.easeOut
-//     }, {
-//       // visibility: 'visible',
-//       // opacity: 1,
-//       // autoAlpha: 0,
-//       left: '-100vw',
-//       // ease: Power4.easeInOut
-//     });
-
-//   let scrollAnimateHeaders = new ScrollMagic.Scene({
-//       triggerElement: el,
-//       offset: 0,
-//       triggerHook: .5,
-//       duration: window.innerHeight
-//     })
-//     .setTween(animateHeaders)
-//     .addTo(controller);
-//   // .addIndicators();
-
-// });
+});
 
 /////////////////////////////////////
 ////* Animate background colors *////
@@ -257,21 +224,7 @@ new ScrollMagic.Scene({
   })
   .setTween(aboutIntroBackground)
   .addTo(controller);
-  // .addIndicators();
-
-// let aboutBackground = new TweenMax.to('#about', 1.5, {
-//   backgroundColor: '#F2ECE5'
-// });
-
-// new ScrollMagic.Scene({
-//     triggerElement: '#about',
-//     triggerHook: 0,
-//     offset: window.innerHeight / 2,
-//     duration: window.innerHeight / 12
-//   })
-//   .setTween(aboutBackground)
-//   .addTo(controller)
-//   .addIndicators();
+// .addIndicators();
 
 let aboutBackground = new TweenMax.to('html', 1.5, {
   backgroundColor: '#F2ECE5'
@@ -284,83 +237,6 @@ new ScrollMagic.Scene({
     duration: window.innerHeight / 4
   })
   .setTween(aboutBackground)
-  .addTo(controller);
-  // .addIndicators();
-
-////////////////////////////////////
-////* Animate about me section *////
-////////////////////////////////////
-
-// let aboutMeElement = document.querySelector('.about-me');
-let animateAboutElement = new TimelineMax();
-
-animateAboutElement
-  .fromTo('.about-me', 0.8, {
-    opacity: 0
-  }, {
-    opacity: 1
-  });
-
-new ScrollMagic.Scene({
-    triggerElement: '#about',
-    triggerHook: 1,
-    duration: window.innerHeight / 2
-  })
-  .setTween(animateAboutElement)
-  .addTo(controller);
-  // .addIndicators();
-
-let animateAboutParagraph = new TimelineMax();
-
-animateAboutParagraph
-  .fromTo('.first-paragraph', 0.5, {
-    opacity: 0,
-    yPercent: '20px'
-  }, {
-    opacity: 1,
-    yPercent: 0
-  })
-  .fromTo('.second-paragraph', 0.3, {
-    opacity: 0,
-    yPercent: '20px'
-  }, {
-    opacity: 1,
-    yPercent: 0
-  })
-  .fromTo('.about-me a', 0.3, {
-    opacity: 0
-  }, {
-    opacity: 1
-  });
-
-// Hide H1-about
-
-let hideH1About = new TimelineMax();
-
-hideH1About
-  .fromTo('.fixed-h1', 0.8, {
-    opacity: 1
-  }, {
-    opacity: 0
-  });
-
-new ScrollMagic.Scene({
-    triggerElement: '.about-me',
-    triggerHook: 0,
-    offset: -window.innerHeight / 1.5,
-    duration: window.innerHeight / 2
-  })
-  .setTween(hideH1About)
-  .addTo(controller);
-// .addIndicators();
-
-new ScrollMagic.Scene({
-    triggerElement: ".about-me",
-    offset: -window.innerHeight / 12
-    // troggerHook: 0.5,
-    // duration: window.innerHeight
-  })
-  .setTween(animateAboutParagraph)
   .addTo(controller);
 // .addIndicators();
 
