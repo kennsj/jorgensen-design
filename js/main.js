@@ -65,13 +65,13 @@ window.onload = function () {
 
 }
 
-// setInterval(() => {
-//   if (allowScroll) {
-//     document.querySelector('html').style.overflowY = 'scroll';
-//   } else if (!allowScroll) {
-//     document.querySelector('html').style.overflowY = 'hidden';
-//   }
-// }, 500);
+setInterval(() => {
+  if (allowScroll) {
+    document.querySelector('html').style.overflowY = 'scroll';
+  } else if (!allowScroll) {
+    document.querySelector('html').style.overflowY = 'hidden';
+  }
+}, 500);
 
 // if (!allowScroll) {
 //   document.querySelector('html').style.overflowY = 'hidden';
@@ -103,13 +103,13 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
 
 
   animatePreview
-    .fromTo(overlay, .4, {
+    .fromTo(overlay, .9, {
       skewX: '-40px'
     }, {
       xPercent: -100,
       skewX: 0,
       ease: Sine.easeInOut,
-    }, '-=.9')
+    })
     .fromTo(projectImage, .9, {
       scale: 1,
     }, {
@@ -124,36 +124,36 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
     }, {
       opacity: 1,
       ease: Sine.easeInOut
-    }, '-=.9')
+    }, '-=1.2')
     .from(projectH6, .3, {
       autoAlpha: 0,
       yPercent: '+=20px',
       ease: Sine.easeInOut,
-    }, '-=.8')
+    }, '-=.9')
     .from(projectParagraph, .4, {
       autoAlpha: 0,
       yPercent: '+=20px',
       ease: Sine.easeInOut,
-    }, '-=.7')
+    }, '-=.8')
     .fromTo(projectLink, .4, {
       opacity: 0
     }, {
       opacity: 1,
       ease: Sine.easeInOut,
-    }, '-=.6');
+    }, '-=.7');
 
 
   let animateProjects = new ScrollMagic.Scene({
       triggerElement: el,
       triggerHook: .75,
       offset: -window.innerHeight / 4,
-      duration: window.innerHeight / .75
+      // duration: window.innerHeight / .75
       // reverse: false,
       // duration: window.innerHeight / 1.3
     })
     .setTween(animatePreview)
-    .addTo(controller)
-    .addIndicators();
+    .addTo(controller);
+    // .addIndicators();
 
 });
 
@@ -223,12 +223,12 @@ let aboutIntroBackground = new TweenMax.to('#about, html', 1.5, {
 
 new ScrollMagic.Scene({
     triggerElement: '#about',
-    triggerHook: .5,
-    duration: window.innerHeight / 4
+    triggerHook: .75,
+    duration: window.innerHeight / 1
   })
   .setTween(aboutIntroBackground)
   .addTo(controller);
-// .addIndicators();
+  // .addIndicators();
 
 let aboutBackground = new TweenMax.to('html', 1.5, {
   // backgroundColor: '#F2ECE5'
