@@ -65,13 +65,13 @@ window.onload = function () {
 
 }
 
-setInterval(() => {
-  if (allowScroll) {
-    document.querySelector('html').style.overflowY = 'scroll';
-  } else if (!allowScroll) {
-    document.querySelector('html').style.overflowY = 'hidden';
-  }
-}, 500);
+// setInterval(() => {
+//   if (allowScroll) {
+//     document.querySelector('html').style.overflowY = 'scroll';
+//   } else if (!allowScroll) {
+//     document.querySelector('html').style.overflowY = 'hidden';
+//   }
+// }, 500);
 
 // if (!allowScroll) {
 //   document.querySelector('html').style.overflowY = 'hidden';
@@ -103,62 +103,64 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
 
 
   animatePreview
-    .fromTo(overlay, 1.3, {
+    .fromTo(overlay, .4, {
       skewX: '-40px'
     }, {
       xPercent: -100,
       skewX: 0,
       ease: Sine.easeInOut,
-    })
+    }, '-=.9')
     .fromTo(projectImage, .9, {
-      scale: 1.1,
-      // skewY: '5px'
+      scale: 1,
     }, {
-      scale: .98,
+      scale: .95,
       skewY: 0,
-      delay: .1,
+      delay: .3,
       ease: Sine.easeInOut,
-    }, '-=1')
+    }, '-=.7')
     .fromTo(projectInfo, .3, {
       opacity: 0,
       ease: Sine.easeInOut
     }, {
       opacity: 1,
       ease: Sine.easeInOut
-    }, '-=.6')
+    }, '-=.9')
     .from(projectH6, .3, {
       autoAlpha: 0,
       yPercent: '+=20px',
       ease: Sine.easeInOut,
-    }, '-=.5')
+    }, '-=.8')
     .from(projectParagraph, .4, {
       autoAlpha: 0,
       yPercent: '+=20px',
       ease: Sine.easeInOut,
-    }, '-=.3')
-    .to(projectLink, .4, {
-      autoAlpha: 1,
+    }, '-=.7')
+    .fromTo(projectLink, .4, {
+      opacity: 0
+    }, {
+      opacity: 1,
       ease: Sine.easeInOut,
-    }, '-=.2');
+    }, '-=.6');
 
 
   let animateProjects = new ScrollMagic.Scene({
       triggerElement: el,
+      triggerHook: .75,
       offset: -window.innerHeight / 4,
+      duration: window.innerHeight / .75
       // reverse: false,
       // duration: window.innerHeight / 1.3
     })
-    .setTween(animatePreview).addTo(controller);
-  // .addIndicators()
+    .setTween(animatePreview)
+    .addTo(controller)
+    .addIndicators();
 
 });
 
-//////////////////////////////
-////* Animate info boxes *////
-//////////////////////////////
+/* Animate info boxes */
 
 
-let infoBoxes = document.querySelectorAll('.info-box')
+/* let infoBoxes = document.querySelectorAll('.info-box')
 
 Array.prototype.forEach.call(infoBoxes, function showProjects(el) {
 
@@ -171,7 +173,7 @@ Array.prototype.forEach.call(infoBoxes, function showProjects(el) {
   animateInfoBoxes
     .fromTo(el, 1.3, {
       autoAlpha: 0,
-      skewX: '-2px'
+      skewX: '-1px'
     }, {
       autoAlpha: 1,
       skewX: 0,
@@ -199,15 +201,17 @@ Array.prototype.forEach.call(infoBoxes, function showProjects(el) {
 
   let animateInfoBox = new ScrollMagic.Scene({
       triggerElement: el,
-      triggerHook: 0,
-      offset: -window.innerHeight / 2,
-      duration: window.innerHeight / 4
+      triggerHook: .75,
+      // offset: -window.innerHeight / 4,
+      // duration: window.innerHeight / 4,
+      offset: -window.innerHeight / 8,
+      duration: window.innerHeight / 3
     })
     .setTween(animateInfoBoxes)
     .addTo(controller);
     // .addIndicators();
 
-});
+}); */
 
 /////////////////////////////////////
 ////* Animate background colors *////
@@ -227,7 +231,7 @@ new ScrollMagic.Scene({
 // .addIndicators();
 
 let aboutBackground = new TweenMax.to('html', 1.5, {
-  backgroundColor: '#F2ECE5'
+  // backgroundColor: '#F2ECE5'
 });
 
 new ScrollMagic.Scene({

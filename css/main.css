@@ -51,7 +51,7 @@ html {
     visibility: visible;
     overflow: hidden;
     z-index: 1000;
-    /* display: none; */
+    display: none;
 }
 
 .preload-info {
@@ -71,7 +71,7 @@ html {
 
 .progress-bar {
     position: absolute;
-    bottom: -1vh;
+    bottom: -2vh;
     left: 0;
     height: 2vh;
     width: 100%;
@@ -246,6 +246,9 @@ section {
     margin: 0 auto;
 }
 
+#projects {
+}
+
 .grid-12 {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -331,7 +334,7 @@ section {
 }
 
 .project-info a {
-    opacity: 0;
+    /* opacity: 0; */
     font-size: .8em;
 }
 
@@ -510,7 +513,8 @@ footer {
     justify-content: center;
     height: 100vh;
     /* background-color: #252525; */
-    color: #252525;
+    /* color: #252525; */
+    color: #F2ECE5;
     margin: 0;
     padding: 20vh 15vw;
 }
@@ -524,7 +528,7 @@ footer a {
     font-size: 1em;
     font-weight: 400;
     /* color: #F2ECE5; */
-    color: #252525;
+    color: #F2ECE5;
 }
 
 .footer-info {
@@ -617,7 +621,7 @@ li {
 
 }
 
-@media only screen and (max-width: 1330px) {
+@media only screen and (max-width: 1366px) {
 
     header {
         width: 80vw;
@@ -688,6 +692,10 @@ li {
 
     #about {
         padding: 10vh 10vw;
+    }
+
+    .info-box {
+        width: 50vw;
     }
 
     #experience {
@@ -794,6 +802,10 @@ li {
     .about-me {
         width: 80%;
         padding: 8em 7em;
+    }
+
+    .info-box {
+        width: 60vw;
     }
 
 }
@@ -917,7 +929,8 @@ li {
     .about-intro h2 {
         color: #F2ECE5;
         margin-top: 20vh;
-        width: 100%;
+        margin-left: 10vw;
+        width: 90%;
     }
 
     .about-me {
@@ -1113,7 +1126,7 @@ li {
         width: 100%;
         text-align: left;
         margin: 0;
-        padding: 2em 0 2em 2em;
+        padding: 2em 0 2em 1em;
         /* margin: 2em 10vw 1em 0;
         padding-left: 1.5em; */
         height: 1em;
