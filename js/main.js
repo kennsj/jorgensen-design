@@ -103,7 +103,7 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
 
 
   animatePreview
-    .fromTo(overlay, .9, {
+    .fromTo(overlay, 1.2, {
       skewX: '-40px'
     }, {
       xPercent: -100,
@@ -129,18 +129,18 @@ Array.prototype.forEach.call(projects, function showProjects(el) {
       autoAlpha: 0,
       yPercent: '+=20px',
       ease: Sine.easeInOut,
-    }, '-=.9')
+    }, '-=1')
     .from(projectParagraph, .4, {
       autoAlpha: 0,
       yPercent: '+=20px',
       ease: Sine.easeInOut,
-    }, '-=.8')
+    }, '-=.9')
     .fromTo(projectLink, .4, {
       opacity: 0
     }, {
       opacity: 1,
       ease: Sine.easeInOut,
-    }, '-=.7');
+    }, '-=.8');
 
 
   let animateProjects = new ScrollMagic.Scene({
